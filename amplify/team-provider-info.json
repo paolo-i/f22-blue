@@ -1,0 +1,15 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-artguardiandemo-staging-190422-authRole",
+      "UnauthRoleArn": "arn:aws:iam::142735167214:role/amplify-artguardiandemo-staging-190422-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::142735167214:role/amplify-artguardiandemo-staging-190422-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-artguardiandemo-staging-190422-deployment",
+      "UnauthRoleName": "amplify-artguardiandemo-staging-190422-unauthRole",
+      "StackName": "amplify-artguardiandemo-staging-190422",
+      "StackId": "arn:aws:cloudformation:us-east-1:142735167214:stack/amplify-artguardiandemo-staging-190422/06bd5b70-4285-11ed-8b4b-0aadaafa73e9",
+      "AmplifyAppId": "d2op19cx3x7jax"
+    }
+  }
+}
