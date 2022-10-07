@@ -1,3 +1,16 @@
+Team Blue - Fall 2022
+
+# Members 
+
+- Arobe22 - Autumn Roberts - arobe022@odu.edu
+- bkid003 - Brandon Kidd - bkidd003@odu.edu
+- carlojdiaz - Carlo Diaz - cdiaz014@odu.edu
+- mthomgithub - Michael Thompson - mthom040@odu.edu
+- paolo-i - Paolo Ihde - pihde001@odu.edu
+- spencerhite - Spencer Hite - shite001@odu.edu
+- tzhen002 - Tobin Zheng - tzhen002@odu.edu
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
