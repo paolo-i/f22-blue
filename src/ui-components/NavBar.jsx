@@ -76,10 +76,9 @@ export default function NavBar(props) {
       </Flex>
       <Flex
         gap="40px"
-        width="633.5px"
+        width="100%"
         alignItems="center"
         grow="1"
-        basis="633.5px"
         height="24px"
         position="relative"
         padding="0px 0px 0px 0px"
@@ -160,11 +159,10 @@ export default function NavBar(props) {
       </Flex>
       <Flex
         gap="32px"
-        width="633.5px"
+        width="100%"
         justifyContent="flex-end"
         alignItems="center"
         grow="1"
-        basis="633.5px"
         height="45px"
         position="relative"
         padding="0px 0px 0px 0px"
