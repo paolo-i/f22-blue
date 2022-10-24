@@ -1,17 +1,54 @@
 import React from 'react'
-import { Tabs, TabItem } from '@aws-amplify/ui-react'
+import { Flex, Button } from '@aws-amplify/ui-react'
+import { FaHome, FaUser, FaBell, FaEllipsisH } from 'react-icons/fa';
 import './NavBar.css'
 
 const NavBar = () => {
   return (
     <nav className="navbar">
+      <Flex
+        direction="row"
+        justifyContent="space-between"
+        alignItems="center"
+        alignContent="flex-start"
+        wrap="nowrap"
+        gap="1rem">
+
         <h1>Art Guardian</h1>
-        <Tabs className='amplify-tabs' justifyContent="flex-end" gap="2rem">
-            <TabItem title="1"></TabItem>
-            <TabItem title="2"></TabItem>
-            <TabItem title="3"></TabItem>
-            <TabItem title="4"></TabItem>
-        </Tabs>
+
+        <Flex
+        direction="row"
+        justifyContent="space-between"
+        alignItems="center"
+        alignContent="flex-start"
+        wrap="nowrap"
+        gap="1rem">
+          <Button variation="menu" size="large">
+            <FaHome
+              ariaLabel="Home"
+              fill='white'
+              />
+          </Button>
+          <Button variation="menu" size="large">
+            <FaUser
+              ariaLabel="Profile"
+              fill='white'
+              />
+          </Button>
+          <Button variation="menu" size="large">
+            <FaBell
+              ariaLabel="Notifications"
+              fill='white'
+              />
+          </Button>
+          <Button variation="menu" size="large">
+            <FaEllipsisH
+              ariaLabel="Settings"
+              fill='white'
+              />
+          </Button>
+        </Flex>
+      </Flex>
     </nav>
   )
 }
