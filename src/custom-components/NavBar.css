@@ -1,7 +1,11 @@
 .navbar {
     margin: 0;
-    padding: 1rem 2rem;
+    padding: 1rem 4rem;
     background-color: #263A58;
+}
+
+.navbar-logo:hover{
+    cursor: pointer;
 }
 
 body {
