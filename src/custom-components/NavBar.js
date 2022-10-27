@@ -1,9 +1,13 @@
 import React from 'react'
 import { Flex, Button, Image } from '@aws-amplify/ui-react'
 import { FaHome, FaUser, FaBell, FaEllipsisH } from 'react-icons/fa';
+import { useNavigate } from "react-router-dom";
 import './NavBar.css'
+import logo from "../logo.png"
 
 const NavBar = () => {
+  const navigate=useNavigate();
+
   return (
     <nav className="navbar">
       <Flex
@@ -15,8 +19,12 @@ const NavBar = () => {
         gap="1rem">
 
         <Image 
+          className="navbar-logo"
           alt="Art Guardian Logo"
-          src="../art-guardian-logo.png" />
+          src={logo}
+          width="15%"
+          height="auto"
+          onClick={() => {navigate('../pages/LandingPage.js')}} />
 
         <Flex
         direction="row"
@@ -24,26 +32,26 @@ const NavBar = () => {
         alignItems="center"
         alignContent="flex-start"
         wrap="nowrap"
-        gap="1rem">
-          <Button variation="menu" size="large">
+        gap="rem">
+          <Button variation="menu" size="large" onClick={() => {navigate('../pages/LandingPage.js')}}>
             <FaHome
               ariaLabel="Home"
               fill='white'
               />
           </Button>
-          <Button variation="menu" size="large">
+          <Button variation="menu" size="large" onClick={() => {navigate('../pages/ProfilePage.js')}}>
             <FaUser
               ariaLabel="Profile"
               fill='white'
               />
           </Button>
-          <Button variation="menu" size="large">
+          <Button variation="menu" size="large" onClick={() => {navigate('../pages/NotificationsPage.js')}}>
             <FaBell
               ariaLabel="Notifications"
               fill='white'
               />
           </Button>
-          <Button variation="menu" size="large">
+          <Button variation="menu" size="large" onClick={() => {navigate('../pages/SettingsPage.js')}}>
             <FaEllipsisH
               ariaLabel="Settings"
               fill='white'
