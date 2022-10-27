@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Button } from '@aws-amplify/ui-react'
+import { Flex, Button, Image } from '@aws-amplify/ui-react'
 import { FaHome, FaUser, FaBell, FaEllipsisH } from 'react-icons/fa';
 import './NavBar.css'
 
@@ -14,7 +14,9 @@ const NavBar = () => {
         wrap="nowrap"
         gap="1rem">
 
-        <h1>Art Guardian</h1>
+        <Image 
+          alt="Art Guardian Logo"
+          src="../art-guardian-logo.png" />
 
         <Flex
         direction="row"
