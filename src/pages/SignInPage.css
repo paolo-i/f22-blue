@@ -4,7 +4,9 @@
   justify-content: center;
   height: 100vh;
   width: 100vw;
+  overflow: auto;
 }
+
 img {
   display: block;
   max-width: 50vw;
@@ -17,36 +19,32 @@ img {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background-color: #378add;
+  background-color: #3386da;
   width: 60vw;
   height: 100vh;
   text-align: center;
   min-width: 30em;
+  overflow: auto;
 }
 
 .loginForm {
-  font-family: 'IBM Plex Mono', monospace;
-  width: 30vw;
-  min-width: 20em;
-  height:50vh;
-  padding-top: 30px;
-  padding-bottom: 20px;
-  border-radius: 20px;
-  background-color: #0b1f3a;
-}
-
-.loginFormContent {
-  display:flex;
+  display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  font-family: 'IBM Plex Mono', monospace;
   width: 100%;
-  height: 100%;
-  margin: auto;
+  min-width: 20em;
+  height:100%;
+  min-height: 20em;
+  background-color: #0b1f3a;
+  font-size: calc(1vmin + 1vh);
+  overflow-y: hidden;
+  overflow: auto;
 }
 
 .loginFormTitle {
-  font-size: 50px;
+  font-size: calc(1vw + 2vmin + 1vh);
   color: rgb(255, 255, 255);
   font-weight: 800;
 }
@@ -57,12 +55,6 @@ img {
   margin: auto;
   padding-bottom: 20px;
   text-align: center;
-}
-
-label {
-  font-size: 20px;
-  font-weight: 600;
-  color: white
 }
 
 .btn {
@@ -76,10 +68,6 @@ label {
   cursor: pointer;
 }
 
-.formInputs {
-  padding:50px;
-}
-
 .form-control {
   text-align: center;
   width: 20vw;
@@ -89,11 +77,10 @@ label {
   min-width: 8em;
 }
 
-h1 {
-  font-size: 100px;
+
+.heading {
+  font-size: calc(1vw + 1vh + 1vmin);
   color: #000000;
-  padding: 0rem 1rem 2rem;
-  max-width: 50vw;
   font-family: 'Roboto Mono', monospace;
 }
 
