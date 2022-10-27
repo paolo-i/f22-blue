@@ -1,0 +1,104 @@
+.parentContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+img {
+  display: block;
+  max-width: 50vw;
+  height: 100vh;
+  width: 50vw;
+}
+
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #2F486E;
+  width: 50vw;
+  height: 100vh;
+  text-align: center;
+  min-width: 50em;
+}
+
+.loginForm {
+  font-family: 'IBM Plex Mono', monospace;
+  width: 30vw;
+  min-width: 20em;
+  height:50vh;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  border-radius: 20px;
+  background-color: rgb(26, 22, 28);
+}
+
+.loginFormContent {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+.loginFormTitle {
+  font-size: 50px;
+  color: rgb(255, 255, 255);
+  font-weight: 800;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+label {
+  font-size: 20px;
+  font-weight: 600;
+  color: white
+}
+
+.btn {
+  text-align: center;
+  vertical-align: center;
+  width: 10vw;
+  max-width: 12em;
+  min-width: 8em;
+  border-radius: 50px;
+  background-color: rgb(129, 223, 230);
+  cursor: pointer;
+}
+
+.formInputs {
+  padding:50px;
+}
+
+.form-control {
+  text-align: center;
+  width: 20vw;
+  background-color: rgb(255, 255, 255);
+  border-radius: 25px;
+  height: 3em;
+  min-width: 8em;
+}
+
+h1 {
+  font-size: 100px;
+  padding-bottom: 100px;
+  color: rgb(218, 197, 173);
+  font-family: 'Space Mono', monospace;
+  padding-left: 1vw;
+  padding-right: 1vw;
+
+}
+
+p {
+  color: white;
+}
