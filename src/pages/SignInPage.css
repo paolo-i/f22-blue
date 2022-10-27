@@ -9,7 +9,7 @@ img {
   display: block;
   max-width: 50vw;
   height: 100vh;
-  width: 50vw;
+  width: 45vw;
 }
 
 .loginContainer {
@@ -17,11 +17,11 @@ img {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background-color: #2F486E;
-  width: 50vw;
+  background-color: #378add;
+  width: 60vw;
   height: 100vh;
   text-align: center;
-  min-width: 50em;
+  min-width: 30em;
 }
 
 .loginForm {
@@ -32,7 +32,7 @@ img {
   padding-top: 30px;
   padding-bottom: 20px;
   border-radius: 20px;
-  background-color: rgb(26, 22, 28);
+  background-color: #0b1f3a;
 }
 
 .loginFormContent {
@@ -72,7 +72,7 @@ label {
   max-width: 12em;
   min-width: 8em;
   border-radius: 50px;
-  background-color: rgb(129, 223, 230);
+  background-color: #db901c;
   cursor: pointer;
 }
 
@@ -91,12 +91,10 @@ label {
 
 h1 {
   font-size: 100px;
-  padding-bottom: 100px;
-  color: rgb(218, 197, 173);
-  font-family: 'Space Mono', monospace;
-  padding-left: 1vw;
-  padding-right: 1vw;
-
+  color: #000000;
+  padding: 0rem 1rem 2rem;
+  max-width: 50vw;
+  font-family: 'Roboto Mono', monospace;
 }
 
 p {
