@@ -6,6 +6,7 @@ import Home from "./pages/LandingPage"
 import Profile from "./pages/ProfilePage";
 import Notifications from "./pages/NotificationsPage";
 import Settings from "./pages/SettingsPage";
+import RegistrationPage from "./pages/RegistrationPage";
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
 
         <Route path="/pages/SettingsPage.js" element={<Navigate to="/settings" />} />
         <Route path="/settings" element={<Settings />} />
+        
+        <Route path="/pages/RegistrationPage.js" element={<Navigate to="/settings" />} />
+        <Route path="/RegistrationPage" element={<RegistrationPage />} />
       </Routes>
     </BrowserRouter>
   );

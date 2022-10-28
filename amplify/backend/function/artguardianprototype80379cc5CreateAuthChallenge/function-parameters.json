@@ -1,0 +1,17 @@
+{
+  "trigger": true,
+  "modules": [
+    "captcha-create-challenge"
+  ],
+  "parentResource": "artguardianprototype80379cc5",
+  "functionName": "artguardianprototype80379cc5CreateAuthChallenge",
+  "resourceName": "artguardianprototype80379cc5CreateAuthChallenge",
+  "parentStack": "auth",
+  "triggerEnvs": [],
+  "triggerDir": "/snapshot/repo/build/node_modules/@aws-amplify/amplify-category-auth/provider-utils/awscloudformation/triggers/CreateAuthChallenge",
+  "triggerTemplate": "CreateAuthChallenge.json.ejs",
+  "triggerEventPath": "CreateAuthChallenge.event.json",
+  "roleName": "artguardianprototype80379cc5CreateAuthChallenge",
+  "skipEdit": true,
+  "enableCors": false
+}

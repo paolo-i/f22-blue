@@ -5,7 +5,7 @@
  **************************************************************************/
 
 /* eslint-disable */
-import React from "react";
+import * as React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { Button, Flex, Image, Text } from "@aws-amplify/ui-react";
 import MyIcon from "./MyIcon";
@@ -35,6 +35,7 @@ export default function ProfileCard(props) {
       <Flex
         gap="8px"
         direction="column"
+        width="fit-content"
         alignItems="center"
         shrink="0"
         position="relative"

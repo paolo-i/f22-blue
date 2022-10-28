@@ -5,7 +5,7 @@
  **************************************************************************/
 
 /* eslint-disable */
-import React from "react";
+import * as React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { Flex, Text, TextField, View } from "@aws-amplify/ui-react";
 export default function MarketingFooter(props) {
@@ -63,6 +63,7 @@ export default function MarketingFooter(props) {
         <Flex
           gap="8px"
           direction="column"
+          width="fit-content"
           shrink="0"
           height="152px"
           position="relative"
@@ -171,6 +172,7 @@ export default function MarketingFooter(props) {
         <Flex
           gap="8px"
           direction="column"
+          width="fit-content"
           shrink="0"
           height="88px"
           position="relative"

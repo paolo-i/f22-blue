@@ -5,7 +5,7 @@
  **************************************************************************/
 
 /* eslint-disable */
-import React from "react";
+import * as React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { Divider, Flex, Text } from "@aws-amplify/ui-react";
 export default function FAQItem(props) {
@@ -35,9 +35,8 @@ export default function FAQItem(props) {
         <Flex
           gap="16px"
           direction="column"
-          width="1232px"
+          width="100%"
           grow="1"
-          basis="1232px"
           height="84px"
           position="relative"
           padding="0px 0px 0px 0px"

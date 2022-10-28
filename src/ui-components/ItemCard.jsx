@@ -5,7 +5,7 @@
  **************************************************************************/
 
 /* eslint-disable */
-import React from "react";
+import * as React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { Badge, Flex, Text } from "@aws-amplify/ui-react";
 export default function ItemCard(props) {
@@ -57,6 +57,7 @@ export default function ItemCard(props) {
         <Flex
           gap="0"
           direction="column"
+          width="fit-content"
           shrink="0"
           height="44px"
           position="relative"

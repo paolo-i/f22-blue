@@ -10,6 +10,21 @@
       "StackName": "amplify-artguardianprototype-staging-184738",
       "StackId": "arn:aws:cloudformation:us-east-1:142735167214:stack/amplify-artguardianprototype-staging-184738/03c9d2c0-48cc-11ed-ae13-1260d77cfdf9",
       "AmplifyAppId": "daq49e3twddli"
+    },
+    "categories": {
+      "auth": {
+        "artguardianprototypec41380a0": {}
+      },
+      "function": {
+        "artguardianprototype80379cc5DefineAuthChallenge": {
+          "deploymentBucketName": "amplify-artguardianprototype-staging-184738-deployment",
+          "s3Key": "amplify-builds/artguardianprototype80379cc5DefineAuthChallenge-357430452b4c772f7348-build.zip"
+        },
+        "artguardianprototype80379cc5CreateAuthChallenge": {
+          "deploymentBucketName": "amplify-artguardianprototype-staging-184738-deployment",
+          "s3Key": "amplify-builds/artguardianprototype80379cc5CreateAuthChallenge-333349654f4735317a70-build.zip"
+        }
+      }
     }
   }
 }
