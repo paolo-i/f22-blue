@@ -2,7 +2,9 @@ import React from 'react'
 import { Flex, Button, Image } from '@aws-amplify/ui-react'
 import { FaHome, FaUser, FaBell, FaEllipsisH } from 'react-icons/fa';
 import { useNavigate } from "react-router-dom";
+import { Menu, MenuItem, MenuButton, ThemeProvider, Theme } from '@aws-amplify/ui-react';
 import './NavBar.css'
+
 import logo from "../logo.png"
 
 const NavBar = () => {
@@ -10,6 +12,7 @@ const NavBar = () => {
 
   return (
     <nav className="navbar">
+       
       <Flex
         direction="row"
         justifyContent="space-between"
@@ -39,12 +42,22 @@ const NavBar = () => {
               fill='white'
               />
           </Button>
-          <Button variation="menu" size="large" onClick={() => {navigate('../pages/ProfilePage.js')}}>
-            <FaUser
+
+<Menu     trigger={
+      <MenuButton variation="primary" size="large" width="40%">
+        <FaUser
               ariaLabel="Profile"
               fill='white'
               />
-          </Button>
+      </MenuButton>
+    }>
+
+<MenuItem onClick={() => {navigate('../pages/ProfilePage.js')}}>Profile</MenuItem>
+<MenuItem onClick={() => {navigate('../pages/ArtUpload.js')}}>Art Upload</MenuItem>
+<MenuItem onClick={() => {navigate('../pages/ArtGallery.js')}}>Art Gallery</MenuItem>
+</Menu>
+            
+
           <Button variation="menu" size="large" onClick={() => {navigate('../pages/NotificationsPage.js')}}>
             <FaBell
               ariaLabel="Notifications"

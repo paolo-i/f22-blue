@@ -7,6 +7,8 @@ import Profile from "./pages/ProfilePage";
 import Notifications from "./pages/NotificationsPage";
 import Settings from "./pages/SettingsPage";
 import RegistrationPage from "./pages/RegistrationPage";
+import ArtUpload from "./pages/ArtUpload";
+import ArtGallery from "./pages/ArtGallery";
 
 function App() {
   return (
@@ -27,8 +29,14 @@ function App() {
         <Route path="/pages/SettingsPage.js" element={<Navigate to="/settings" />} />
         <Route path="/settings" element={<Settings />} />
         
-        <Route path="/pages/RegistrationPage.js" element={<Navigate to="/settings" />} />
+        <Route path="/pages/RegistrationPage.js" element={<Navigate to="/RegistrationPage" />} />
         <Route path="/RegistrationPage" element={<RegistrationPage />} />
+
+        <Route path="/pages/ArtUpload.js" element={<Navigate to="/ArtUpload" />} />
+        <Route path="/ArtUpload" element={<ArtUpload />} />
+
+        <Route path="/pages/ArtGallery.js" element={<Navigate to="/ArtGallery" />} />
+        <Route path="/ArtGallery" element={<ArtGallery />} />
       </Routes>
     </BrowserRouter>
   );
