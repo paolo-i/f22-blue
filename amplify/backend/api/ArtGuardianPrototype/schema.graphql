@@ -1,3 +1,9 @@
+type Artwork @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  Art_name: String
+  Art_address: String
+}
+
 type Settings @model @auth(rules: [{allow: public}]) {
   id: ID!
   Notification_Setting: String
