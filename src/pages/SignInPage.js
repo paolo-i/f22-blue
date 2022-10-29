@@ -1,7 +1,7 @@
 import React from "react";
 import "./SignInPage.css";
-import "./RegistrationPage.js";
-import { Link } from 'react-router-dom';
+import "./LoginAndRegistrationPage.js";
+import { Link } from "react-router-dom";
 
 export default function Login(props) {
   return (
@@ -40,9 +40,10 @@ export default function Login(props) {
             </div>
             <p>Don't have an account?</p>
             <div className="d-grid gap-2 mt-3">
-            <Link to="/RegistrationPage"><button type="button" className="btn btn-primary">
-                Register
-              </button>
+              <Link to="/RegistrationPage">
+                <button type="button" className="btn btn-primary">
+                  Register
+                </button>
               </Link>
             </div>
           </form>
