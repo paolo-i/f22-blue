@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Login from "./pages/SignInPage";
 import Home from "./pages/LandingPage";
 import UserArtGallery from "./pages/UserArtGalleryPage";
 import Notifications from "./pages/NotificationsPage";
