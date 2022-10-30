@@ -1,6 +1,6 @@
 import React from 'react'
 import { Flex, Button, Image } from '@aws-amplify/ui-react'
-import { FaHome, FaUser, FaBell, FaEllipsisH } from 'react-icons/fa';
+import { FaHome, FaUser, FaBell, FaEllipsisH, FaUpload } from 'react-icons/fa';
 import { useNavigate } from "react-router-dom";
 import './NavBar.css'
 import logo from "../logo.png"
@@ -39,9 +39,9 @@ const NavBar = () => {
               fill='white'
               />
           </Button>
-          <Button variation="menu" size="large" onClick={() => {navigate('../pages/ProfilePage.js')}}>
+          <Button variation="menu" size="large" onClick={() => {navigate('../pages/UserArtGalleryPage.js')}}>
             <FaUser
-              ariaLabel="Profile"
+              ariaLabel="User Art Gallery"
               fill='white'
               />
           </Button>

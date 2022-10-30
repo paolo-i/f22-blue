@@ -3,9 +3,9 @@ import "./App.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Login from "./pages/SignInPage";
 import Home from "./pages/LandingPage";
-import Profile from "./pages/ProfilePage";
+import UserArtGallery from "./pages/UserArtGalleryPage";
 import Notifications from "./pages/NotificationsPage";
-import Settings from "./pages/SettingsPage";
+import AccountSettings from "./pages/AccountSettingsPage";
 import LoginAndRegistrationPage from "./pages/LoginAndRegistrationPage";
 
 function App() {
@@ -22,10 +22,10 @@ function App() {
         <Route path="/home" element={<Home />} />
 
         <Route
-          path="/pages/ProfilePage.js"
+          path="/pages/UserArtGalleryPage.js"
           element={<Navigate to="/profile" />}
         />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile" element={<UserArtGallery />} />
 
         <Route
           path="/pages/NotificationsPage.js"
@@ -37,7 +37,7 @@ function App() {
           path="/pages/SettingsPage.js"
           element={<Navigate to="/settings" />}
         />
-        <Route path="/settings" element={<Settings />} />
+        <Route path="/accountsettings" element={<AccountSettings />} />
 
         <Route
           path="/pages/LoginAndRegistrationPage.js"

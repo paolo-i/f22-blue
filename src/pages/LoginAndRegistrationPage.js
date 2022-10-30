@@ -205,8 +205,9 @@ const LoginAndRegistrationPage = () => {
         overflow="hidden"
       >
         <Authenticator
-          loginMechanisms={["email"]}
-          signUpAttributes={["email", "phone_number"]}
+          // loginMechanisms may be changed to "email"
+          loginMechanisms={["username"]}
+          signUpAttributes={["email", "preferred_username", "phone_number"]}
           components={components}
         >
           {({ signOut, user }) => (
