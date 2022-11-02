@@ -1,6 +1,6 @@
 import React from 'react'
 import { Flex, Button, Image } from '@aws-amplify/ui-react'
-import { FaHome, FaUser, FaBell, FaEllipsisH } from 'react-icons/fa';
+import { FaHome, FaUser, FaBell, FaEllipsisH, FaUpload } from 'react-icons/fa';
 import { useNavigate } from "react-router-dom";
 import { Menu, MenuItem, MenuButton, ThemeProvider, Theme } from '@aws-amplify/ui-react';
 import './NavBar.css'

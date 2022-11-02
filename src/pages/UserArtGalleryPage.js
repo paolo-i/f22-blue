@@ -1,6 +1,6 @@
 import NavBar from "../custom-components/NavBar";
 
-export default function Profile(props) {
+export default function UserArtGallery(props) {
   return (
     <>
         <NavBar />

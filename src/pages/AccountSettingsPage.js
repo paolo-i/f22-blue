@@ -1,6 +1,6 @@
 import NavBar from "../custom-components/NavBar";
 
-export default function Settings(props) {
+export default function AccountSettings(props) {
   return (
     <>
         <NavBar />
