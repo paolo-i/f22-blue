@@ -24,6 +24,9 @@
           "deploymentBucketName": "amplify-artguardianprototype-staging-184738-deployment",
           "s3Key": "amplify-builds/artguardianprototype80379cc5CreateAuthChallenge-333349654f4735317a70-build.zip"
         }
+      },
+      "storage": {
+        "s3artworkpics": {}
       }
     }
   }

@@ -3,7 +3,7 @@ import "./LandingPage.css";
 import NavBar from "../custom-components/NavBar";
 import { View } from "@aws-amplify/ui-react";
 
-export default function Home(props) {
+export default function Home(props){
   return (
     <>
         <NavBar />
@@ -31,3 +31,4 @@ export default function Home(props) {
     </>
   );
 }
+

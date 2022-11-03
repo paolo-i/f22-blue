@@ -207,12 +207,13 @@ const LoginAndRegistrationPage = () => {
         <Authenticator
           // loginMechanisms may be changed to "email"
           loginMechanisms={["username"]}
-          signUpAttributes={["email", "preferred_username", "phone_number"]}
+          signUpAttributes={["email", "preferred_username"]}
           components={components}
         >
           {({ signOut, user }) => (
             <main>
               <h1>Hello {user.username}</h1>
+              <Home props={user}/>
               <button onClick={signOut}>Sign out</button>
             </main>
           )}

@@ -1,0 +1,13 @@
+{
+  "resourceName": "s3artworkpics",
+  "bucketName": "artworkpics",
+  "policyUUID": "3cdb0c9a",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ]
+  
+}

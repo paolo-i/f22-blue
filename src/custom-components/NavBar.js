@@ -2,8 +2,9 @@ import React from 'react'
 import { Flex, Button, Image } from '@aws-amplify/ui-react'
 import { FaHome, FaUser, FaBell, FaEllipsisH, FaUpload } from 'react-icons/fa';
 import { useNavigate } from "react-router-dom";
-import { Menu, MenuItem, MenuButton, ThemeProvider, Theme } from '@aws-amplify/ui-react';
+import { Menu, MenuItem, MenuButton} from '@aws-amplify/ui-react';
 import './NavBar.css'
+import SignOutButton from './SignOutButton';
 
 import logo from "../logo.png"
 
@@ -53,8 +54,7 @@ const NavBar = () => {
     }>
 
 <MenuItem onClick={() => {navigate('../pages/ProfilePage.js')}}>Profile</MenuItem>
-<MenuItem onClick={() => {navigate('../pages/ArtUpload.js')}}>Art Upload</MenuItem>
-<MenuItem onClick={() => {navigate('../pages/ArtGallery.js')}}>Art Gallery</MenuItem>
+<MenuItem onClick={() => {navigate('../pages/UserArtGalleryPage.js')}}>Art Gallery and Upload</MenuItem>
 </Menu>
             
 
@@ -70,6 +70,7 @@ const NavBar = () => {
               fill='white'
               />
           </Button>
+          <SignOutButton/>
         </Flex>
       </Flex>
     </nav>
