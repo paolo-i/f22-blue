@@ -1,6 +1,6 @@
 import React from 'react'
 import {Auth} from "aws-amplify";
-import { useNavigate } from "react-router-dom";
+
 
 function SignOutButton() {
     const signOut = (e) => {
