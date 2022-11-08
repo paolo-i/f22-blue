@@ -6,6 +6,7 @@ import UserArtGallery from "./pages/UserArtGalleryPage";
 import Notifications from "./pages/NotificationsPage";
 import AccountSettings from "./pages/AccountSettingsPage";
 import LoginAndRegistrationPage from "./pages/LoginAndRegistrationPage";
+import ESignaturePage from "./pages/ESignaturePage";
 
 function App() {
   return (
@@ -37,6 +38,12 @@ function App() {
           element={<Navigate to="/settings" />}
         />
         <Route path="/accountsettings" element={<AccountSettings />} />
+
+        <Route
+          path="/pages/ESignaturePage.js"
+          element={<Navigate to="/esign" />}
+        />
+        <Route path="/esign" element={<ESignaturePage />} />
 
         <Route
           path="/pages/LoginAndRegistrationPage.js"
