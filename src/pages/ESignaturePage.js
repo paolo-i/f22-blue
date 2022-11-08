@@ -21,7 +21,7 @@ const ESignaturePage = () => {
     <>
         <NavBar />
         <div class="body">
-            <ScrollView backgroundColor="white" height="400px" maxWidth="100%">
+            <ScrollView backgroundColor="#f5f5f5" height="400px" maxWidth="100%">
                 <div class="confirmation-text">
                 <Text fontSize={18}>
                     To OpenSea,
@@ -48,7 +48,7 @@ const ESignaturePage = () => {
 
                 <Text color="white">*Required</Text>
                 <Flex justifyContent="space-between">
-                    <SignatureCanvas ref={sigPad} backgroundColor='white' canvasProps={{className: 'sig-canvas'}} onBegin={setSubmitButtonStatus} />
+                    <SignatureCanvas ref={sigPad} backgroundColor='#f5f5f5' canvasProps={{className: 'sig-canvas'}} onBegin={setSubmitButtonStatus} />
                     <Button variation="primary"
                             className='clear-signature-button'
                             onClick={clearSignature}
