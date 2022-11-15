@@ -213,7 +213,7 @@ const LoginAndRegistrationPage = () => {
           {({ signOut, user }) => (
             <main>
               <h1>Hello {user.username}</h1>
-              <Home props={user}/>
+              <Home user/>
               <button onClick={signOut}>Sign out</button>
             </main>
           )}

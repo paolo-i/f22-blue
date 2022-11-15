@@ -4,9 +4,11 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/LandingPage";
 import UserArtGallery from "./pages/UserArtGalleryPage";
 import Notifications from "./pages/NotificationsPage";
+import profile from "./pages/ProfilePage";
 import AccountSettings from "./pages/AccountSettingsPage";
 import LoginAndRegistrationPage from "./pages/LoginAndRegistrationPage";
 import ESignaturePage from "./pages/ESignaturePage";
+import ArtGallery from "./pages/UserArtGalleryPage";
 
 function App() {
   return (
@@ -22,10 +24,10 @@ function App() {
         <Route path="/home" element={<Home />} />
 
         <Route
-          path="/pages/UserArtGalleryPage.js"
-          element={<Navigate to="/profile" />}
+          path="/pages/ProfilePage.js"
+          element={<Navigate to="/Profile" />}
         />
-        <Route path="/profile" element={<UserArtGallery />} />
+        <Route path="/Profile" element={<profile/>} />
 
         <Route
           path="/pages/NotificationsPage.js"
@@ -34,10 +36,11 @@ function App() {
         <Route path="/notifications" element={<Notifications />} />
 
         <Route
-          path="/pages/SettingsPage.js"
-          element={<Navigate to="/settings" />}
+          path="/pages/AccountSettingsPage.js"
+          element={<Navigate to="/AccountSettings" />}
         />
-        <Route path="/accountsettings" element={<AccountSettings />} />
+        <Route path="/AccountSettings" element={<AccountSettings />} />
+
 
         <Route
           path="/pages/ESignaturePage.js"
@@ -46,8 +49,14 @@ function App() {
         <Route path="/esign" element={<ESignaturePage />} />
 
         <Route
+          path="/pages/UserArtGalleryPage.js"
+          element={<Navigate to="/ArtGallery" />}
+        />
+        <Route path="/ArtGallery" element={<ArtGallery />} />
+
+        <Route
           path="/pages/LoginAndRegistrationPage.js"
-          element={<Navigate to="/settings" />}
+          element={<Navigate to="/LoginAndRegistrationPage" />}
         />
       </Routes>
     </BrowserRouter>
