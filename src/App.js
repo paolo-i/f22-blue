@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/LandingPage";
 import UserArtGallery from "./pages/UserArtGalleryPage";
 import Notifications from "./pages/NotificationsPage";
-import profile from "./pages/ProfilePage";
+import Profile from "./pages/ProfilePage";
 import AccountSettings from "./pages/AccountSettingsPage";
 import LoginAndRegistrationPage from "./pages/LoginAndRegistrationPage";
 import ESignaturePage from "./pages/ESignaturePage";
@@ -27,7 +27,7 @@ function App() {
           path="/pages/ProfilePage.js"
           element={<Navigate to="/Profile" />}
         />
-        <Route path="/Profile" element={<profile/>} />
+        <Route path="/Profile" element={<Profile/>} />
 
         <Route
           path="/pages/NotificationsPage.js"
