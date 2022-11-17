@@ -11,6 +11,7 @@ const options = [
     { key: 'm', text: 'Male', value: 'male' },
     { key: 'f', text: 'Female', value: 'female' },
     { key: 'o', text: 'Other', value: 'other' },
+    { key:'NotSpecified', text:'Prefer not to say', value:'NotSpecified'},
   ]
   
   class Profile extends Component {
@@ -88,7 +89,7 @@ const options = [
           const {username,email,first_name,last_name,birthdate,gender,phone_number,address} = this.state;
           
           return(
-              <><p>hello</p><Authenticator>
+              <><Authenticator>
                   {({ user }) => (
                       <><NavBar /><Segment color="blue">
                           <Grid padded>
@@ -110,7 +111,15 @@ const options = [
   
                                       <Form.Group>
                                           <Form.Input name='birthdate' value={birthdate} label='Birthday' placeholder='02/02/2002' width={4} onChange={this.handleChange} error={false} />
-                                          <Form.Select name='gender' value={gender} label='Gender' placeholder='Gender' options={options} width={6} onChange={this.handleChange} error={false} />
+                                          <label>
+                                          Gender:
+                                             <select value={this.state.value} onChange={this.handleChange}>
+                                             <option value="Male">Male</option>
+                                              <option value="Female">Female</option>
+                                             <option value="Other">Other</option>
+                                             <option value="Prefer Not to Say">NotSpecified</option>
+                                          </select>
+                                         </label>
                                       </Form.Group>
   
                                       <Form.Group>
@@ -121,9 +130,8 @@ const options = [
                                       <Form.Group>
                                           <Form.Input name='address' value={address} label='Address' placeholder='2/77 New Street, Newport 3015 Melbourne, Victoria, Australia ' width={16} onChange={this.handleChange} error={false} />
                                       </Form.Group>
-  
-  
                                       <Button type='submit'>Submit</Button>
+                                      
                                   </Form>
   
                               </Grid.Column>
