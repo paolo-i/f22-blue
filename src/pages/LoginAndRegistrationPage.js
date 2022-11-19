@@ -207,7 +207,7 @@ const LoginAndRegistrationPage = () => {
         <Authenticator
           // loginMechanisms may be changed to "email"
           loginMechanisms={["username"]}
-          signUpAttributes={["email", "preferred_username"]}
+          signUpAttributes={["email","given_name","family_name","birthdate"]}
           components={components}
         >
           {({ signOut, user }) => (

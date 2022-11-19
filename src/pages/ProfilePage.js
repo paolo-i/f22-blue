@@ -21,12 +21,11 @@ const options = [
           this.state = {
               authState: this.props.authState,
               email:'',
-              first_name:'',
-              last_name:'',
+              given_name:'',
+              family_name:'',
               birthdate:'',
               gender:'',
-              phone_number:'',
-              address:'',
+
           }
       }
       
@@ -43,12 +42,11 @@ const options = [
               
               
               email:user.attributes.email ? user.attributes.email : '',
-              first_name: user.attributes.given_name ? user.attributes.given_name : '',
-              last_name: user.attributes.family_name ? user.attributes.family_name : '',
+              given_name: user.attributes.given_name ? user.attributes.given_name : '',
+              family_name: user.attributes.family_name ? user.attributes.family_name : '',
               birthdate: user.attributes.birthdate ? user.attributes.birthdate : '',
-              gender: user.attributes.gender ? user.attributes.gender : '',
-              phone_number: user.attributes.phone_number ? user.attributes.phone_number : '',
-              address: user.attributes.address ? user.attributes.address : '',
+              
+
              
               
               stateFromStorage: true
@@ -68,12 +66,11 @@ const options = [
           Auth.updateUserAttributes(this.state.authData,{
               
               'email':this.state.email,
-              'first_name':this.state.given_name,
-              'last_name':this.state.family_name,
+              'given_name':this.state.given_name,
+              'family_name':this.state.family_name,
               'birthdate':this.state.birthdate,
-              'gender':this.state.gender,
-              'phone_number':this.state.phone_number,
-              'address':this.state.address,
+              
+
               
           }).catch(e => { 
               console.log('Error updating user: '); 
@@ -86,7 +83,7 @@ const options = [
           let loading = true;
           if(this.state.authData) { loading = false; } 
           
-          const {username,email,first_name,last_name,birthdate,gender,phone_number,address} = this.state;
+          const {username,email,given_name,family_name,birthdate} = this.state;
           
           return(
               <><Authenticator>
@@ -104,33 +101,18 @@ const options = [
                                       </Form.Group>
   
                                       <Form.Group>
-                                          <Form.Input name='first_name' value={first_name} label='First name' placeholder='First Name' width={6} onChange={this.handleChange} error={false} />
-  
-                                          <Form.Input name='last_name' value={last_name} label='Last Name' placeholder='Last Name' width={6} onChange={this.handleChange} error={false} />
+                                      <Form.Input name='given_name' value={given_name} label='First name' placeholder='First Name' width={6} onChange={this.handleChange} error={false} />
+   
+                                        <Form.Input name='family_name' value={family_name} label='Last Name' placeholder='Last Name' width={6} onChange={this.handleChange} error={false} />
                                       </Form.Group>
   
                                       <Form.Group>
                                           <Form.Input name='birthdate' value={birthdate} label='Birthday' placeholder='02/02/2002' width={4} onChange={this.handleChange} error={false} />
-                                          <label>
-                                          Gender:
-                                             <select value={this.state.value} onChange={this.handleChange}>
-                                             <option value="Male">Male</option>
-                                              <option value="Female">Female</option>
-                                             <option value="Other">Other</option>
-                                             <option value="Prefer Not to Say">NotSpecified</option>
-                                          </select>
-                                         </label>
+                                          
                                       </Form.Group>
   
-                                      <Form.Group>
-                                          <Form.Input name='phone_number' value={phone_number} label='Mobile number' placeholder='+61 0400 000 000' width={6} onChange={this.handleChange} error={false} />
-  
-                                      </Form.Group>
-  
-                                      <Form.Group>
-                                          <Form.Input name='address' value={address} label='Address' placeholder='2/77 New Street, Newport 3015 Melbourne, Victoria, Australia ' width={16} onChange={this.handleChange} error={false} />
-                                      </Form.Group>
-                                      <Button type='submit'>Submit</Button>
+                                     <button type="submit">Submit</button>
+                                    
                                       
                                   </Form>
   
