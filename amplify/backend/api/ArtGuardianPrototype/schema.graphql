@@ -2,31 +2,14 @@ type Artwork @model @auth(rules: [{allow: public}]) {
   id: ID!
   Art_name: String
   Art_address: String
+  Whitelist_art: Boolean
+  User_ID: String
+  token_ID: String
 }
 
 type Settings @model @auth(rules: [{allow: public}]) {
   id: ID!
   Notification_Setting: String
   Profile_Setting: String
-  User: User @hasOne
-}
-
-type Profile @model @auth(rules: [{allow: public}]) {
-  id: ID!
-  Username: String
-  Password: String
-  User: User @hasOne
-  Settings: Settings @hasOne
-}
-
-type User @model @auth(rules: [{allow: public}]) {
-  id: ID!
-  Fname: String
-  Lname: String
-  DOB: AWSDate
-  Email: AWSEmail
-  Phone_number: AWSPhone
-  Settings: Settings @belongsTo
-  Profile: Profile @belongsTo
 }
  

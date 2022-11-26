@@ -33,3 +33,7 @@ export { default as SideBar } from "./SideBar";
 export { default as HeroLayout2 } from "./HeroLayout2";
 export { default as HeroLayout4 } from "./HeroLayout4";
 export { default as studioTheme } from "./studioTheme";
+export { default as ArtworkCreateForm } from "./ArtworkCreateForm";
+export { default as ArtworkUpdateForm } from "./ArtworkUpdateForm";
+export { default as SettingsCreateForm } from "./SettingsCreateForm";
+export { default as SettingsUpdateForm } from "./SettingsUpdateForm";

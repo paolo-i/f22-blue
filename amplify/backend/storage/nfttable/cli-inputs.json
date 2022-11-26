@@ -1,0 +1,10 @@
+{
+  "resourceName": "nfttable",
+  "tableName": "nfttable",
+  "partitionKey": {
+    "fieldName": "id",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}
