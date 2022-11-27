@@ -38,7 +38,7 @@ export default class ArtGallery extends Component {
     event.preventDefault();
     const { username, filename, tokenID, Whitelist } = this.state;
     await axios.post(
-      'https://4937s3ol69.execute-api.us-east-1.amazonaws.com',
+      'https://4937s3ol69.execute-api.us-east-1.amazonaws.com/staging',
       { key1: `${username}, ${filename},${Whitelist},${tokenID}` }
     );
   }
@@ -53,9 +53,9 @@ export default class ArtGallery extends Component {
      position="right center">
       <div>
         <h3>Artwork Information</h3>
-        <Form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
           <label>username:</label>
-          <Form.Group>
+          
           <input
             type="text"
             placeholder={user.username}
@@ -63,20 +63,20 @@ export default class ArtGallery extends Component {
             onChange={this.handleChange}
             value={this.state.username}
           />
-          </Form.Group>
+          
 
           <label>File Name:</label>
-          <Form.Group>
-          <Form.Input
+          
+          <input
             type="text"
             name="filename"
             onChange={this.handleChange}
             value={this.state.filename}
           />
-          </Form.Group>
+          
 
           <label> TokenID (Leave as is if not whitelisting):</label>
-          <Form.Group>
+          
           <input
             type="text"
             placeholder="N/A"
@@ -84,10 +84,10 @@ export default class ArtGallery extends Component {
             onChange={this.handleChange}
             value={this.state.tokenid}
           />
-          </Form.Group>
+          
 
           <button type="submit">Send</button>
-        </Form>
+        </form>
       
       </div>
     </Popup>
