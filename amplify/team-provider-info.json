@@ -36,7 +36,8 @@
       "storage": {
         "s3artworkpics": {},
         "nfttable": {},
-        "dmcadatatable": {}
+        "dmcadatatable": {},
+        "artInformationDynamoDB": {}
       }
     }
   }

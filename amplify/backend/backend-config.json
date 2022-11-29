@@ -20,34 +20,6 @@
           ]
         }
       }
-    },
-    "nftapi": {
-      "service": "API Gateway",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [
-        {
-          "category": "function",
-          "resourceName": "nftmetadatafunction",
-          "attributes": [
-            "Name",
-            "Arn"
-          ]
-        }
-      ]
-    },
-    "dmcaapi": {
-      "service": "API Gateway",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [
-        {
-          "category": "function",
-          "resourceName": "dmcafunction",
-          "attributes": [
-            "Name",
-            "Arn"
-          ]
-        }
-      ]
     }
   },
   "function": {
@@ -60,38 +32,6 @@
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
-    },
-    "nftmetadatafunction": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda",
-      "dependsOn": [
-        {
-          "category": "storage",
-          "resourceName": "nfttable",
-          "attributes": [
-            "Name",
-            "Arn",
-            "StreamArn"
-          ]
-        }
-      ]
-    },
-    "dmcafunction": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda",
-      "dependsOn": [
-        {
-          "category": "storage",
-          "resourceName": "dmcadatatable",
-          "attributes": [
-            "Name",
-            "Arn",
-            "StreamArn"
-          ]
-        }
-      ]
     }
   },
   "auth": {
@@ -126,11 +66,7 @@
       "providerPlugin": "awscloudformation",
       "dependsOn": []
     },
-    "nfttable": {
-      "service": "DynamoDB",
-      "providerPlugin": "awscloudformation"
-    },
-    "dmcadatatable": {
+    "artInformationDynamoDB": {
       "service": "DynamoDB",
       "providerPlugin": "awscloudformation"
     }
