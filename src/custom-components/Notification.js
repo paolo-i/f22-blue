@@ -7,8 +7,7 @@ import awsconfig from "../aws-exports";
 
 Amplify.configure(awsconfig);
 
-export default function Notification ({token_id, blockchain, contract_address, img_link, marketplace_name}) {
-
+export default function Notification (props) {
     return (
     <>
         <Card backgroundColor="#263A58" variation="elevated">
@@ -21,13 +20,11 @@ export default function Notification ({token_id, blockchain, contract_address, i
                     gap="10rem"
                     wrap="bottom">
 
-                    <Image src={img_link} />
+                    <Image src={logo} />
 
                     <div>
-                        <h2>Your art has been found on a <Link color="#8BC7FF" href={img_link} isExternal="true">transaction on {marketplace_name}</Link></h2>
-                        <p>Token ID: {token_id}</p>
-                        <p>Blockchain: {blockchain}</p>
-                        <p>Contract address: {contract_address}</p>
+                        <h2>Your art titled "title" has been found an an <Link color="#8BC7FF">nftmarketplace transaction</Link></h2>
+                        <p><Link color="#8BC7FF">Click here</Link> for more information</p>
                     </div>
                 </Flex>
             </div>
