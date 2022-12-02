@@ -15,7 +15,7 @@ export default function Home( props){
         <><NavBar /><View padding="1rem 2rem">
             <h1>Welcome back, {user.username}</h1>
             <h2>You have no new notifications</h2>
-          </View><View backgroundColor="#0e142e" padding="1rem 2rem">
+          </View><View backgroundColor="#263A58" padding="1rem 2rem">
               <h1>Art Protection Guidelines</h1>
               <p>Protecting art begins with you.</p>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed

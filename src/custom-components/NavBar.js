@@ -45,7 +45,7 @@ const NavBar = () => {
           </Button>
 
 <Menu     trigger={
-      <MenuButton variation="primary" size="large" width="40%">
+      <MenuButton variation="menu" size="large">
         <FaUser
               ariaLabel="Profile"
               fill='white'

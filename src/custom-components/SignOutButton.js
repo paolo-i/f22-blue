@@ -1,5 +1,6 @@
 import React from 'react'
 import {Auth} from "aws-amplify";
+import { Button, Text } from '@aws-amplify/ui-react';
 
 
 function SignOutButton() {
@@ -10,9 +11,9 @@ function SignOutButton() {
         });
     }
     return (
-        <button onClick={signOut}>
-            Sign out
-        </button>
+        <Button variation="menu" onClick={signOut}>
+            <Text color="white">Sign Out</Text>
+        </Button>
     )
 }
 
