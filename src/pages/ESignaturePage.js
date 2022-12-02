@@ -20,12 +20,10 @@ const ESignaturePage = () => {
     }
 
   return (
-
-  
-        <>
-            <Authenticator>
-    {({user }) => (
-        <><NavBar /><div class="body">
+        <Authenticator>
+            {({user }) => (
+            <>
+            <NavBar /><div class="body">
                       <ScrollView backgroundColor="#f5f5f5" height="400px" maxWidth="100%">
                           <div class="confirmation-text">
                               <Text fontSize={18}>
@@ -65,12 +63,11 @@ const ESignaturePage = () => {
                                   size="large">Submit</Button>
                           </Flex>
                       </View>
-                  </div></>
-    )})
-                </Authenticator>
-                  </>
-
-        
+                  </div>
+            </>
+            )
+        }
+    </Authenticator>
   )
 }
 
