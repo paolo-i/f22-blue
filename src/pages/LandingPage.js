@@ -1,7 +1,6 @@
 import React from "react";
 import "./LandingPage.css";
 import {Authenticator } from '@aws-amplify/ui-react';
-
 import awsconfig from "../aws-exports";
 import NavBar from "../custom-components/NavBar";
 import { View } from "@aws-amplify/ui-react";
@@ -9,28 +8,56 @@ import { View } from "@aws-amplify/ui-react";
 export default function Home( props){
   return (
     <>
+   
      <Authenticator>
           {({ signOut, user }) => (
     
-        <><NavBar /><View padding="1rem 2rem">
+        <><NavBar />
+        <div>
+        
+        <View padding="1rem 2rem">
             <h1>Welcome back, {user.username}</h1>
             <h2>You have no new notifications</h2>
           </View><View backgroundColor="#0e142e" padding="1rem 2rem">
               <h1>Art Protection Guidelines</h1>
               <p>Protecting art begins with you.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                est laborum.</p>
+              <p>With art theft on the rise, especially in regards to NFT's
+                 it is important that we all work together to protect our art.
+                 If each individual followed these simple steps we can nip this
+                 problem in the bud</p>
               <ul>
-                <li>lorem</li>
-                <li>lorem</li>
-                <li>lorem</li>
+                <li>Step 1: Keep the resolustion low!
+                      We understand the want to upload the best
+                      image possible, but higher resolution images
+                      are more tempting to steal. We recommend an
+                      image be no more than 96 dots per inch.
+                </li>
+                <li>Step 2: Keep it Small!
+                      By uploading a smaller version of your art
+                      it will be less tempting to steal and sell.
+                      How can they sell an NFT if it is too small, 
+                      especially if they try to enlarge it and it
+                      turns out grainy.
+                </li>
+                <li>Step 3: Watermark!
+                      Add a layer to the artwork that contains your
+                      username and your socials to help prevent people
+                      from trying to pass it off as their own. Also if it
+                      does get stolen, you may be notified or people may be
+                      redirected to you.
+                </li>
+                <li>Final Step: Upload to Art Guardian!
+                      Art Guardian cannot prevent the theft from occuring,
+                      but we can help stop its proliferation and take down
+                      stolen are. That cannot be done without you uploading
+                      to Art Guardian. Make sure to upload unmodified,
+                      original resolution
+
+                </li>
               </ul>
-            </View></>
+            </View>
+            </div>
+            </>
           )}
            </Authenticator>
     </>
