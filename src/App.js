@@ -9,6 +9,7 @@ import AccountSettings from "./pages/AccountSettingsPage";
 import LoginAndRegistrationPage from "./pages/LoginAndRegistrationPage";
 import ESignaturePage from "./pages/ESignaturePage";
 import ArtGallery from "./pages/UserArtGalleryPage";
+import Confirmation from "./pages/ConfirmationPage";
 
 function App() {
   return (
@@ -19,6 +20,12 @@ function App() {
           path="/LoginAndRegister"
           element={<LoginAndRegistrationPage />}
         />
+
+        <Route
+          path="/pages/ConfirmationPage.js"
+          element={<Navigate to="/confirmation" />}
+        />
+        <Route path="/confirmation" element={<Confirmation />}/>
 
         <Route path="/pages/LandingPage.js" element={<Navigate to="/home" />} />
         <Route path="/home" element={<Home />} />
