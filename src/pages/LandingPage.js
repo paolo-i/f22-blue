@@ -13,7 +13,6 @@ export default function Home( props){
           {({ signOut, user }) => (
     
         <><NavBar />
-        <div>
         
         <View padding="1rem 2rem">
             <h1>Welcome back, {user.username}</h1>
@@ -56,7 +55,6 @@ export default function Home( props){
                 </li>
               </ul>
             </View>
-            </div>
             </>
           )}
            </Authenticator>
