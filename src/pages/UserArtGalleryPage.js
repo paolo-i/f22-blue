@@ -11,7 +11,7 @@ function ArtGallery() {
   const {createArt, status} = UseWriteArtDynamoDB()
   const [username, setUsername] = useState('')
   const [fileName, setfileName] = useState('')
-  const [whitelist, setWhitelist] = useState('')
+  const [whitelist, setWhitelist] = useState(true)
   const [tokenId, setTokenId] = useState('')
   const handleSubmit = (event) => {
       event.preventDefault();
@@ -25,8 +25,7 @@ function ArtGallery() {
               <h1 style = {{ 'text-align': 'center' }} > {user.username}'s Gallery</h1>
               <Popup trigger = {<AmplifyS3Album level="private"/>} 
               position = "right center">
-              </Popup>
-            </div>
+              
 
             <div className="container my-5">
             <div className="row">
@@ -49,11 +48,16 @@ function ArtGallery() {
                             />
                         </div>
                         <br/>
+                        
                         <div className="input-group">
-                            <input type="text" className="form-control" placeholder="Whitelist? (yes/no)"
-                                   value={whitelist}
-                                   onChange={event => setWhitelist(event.target.value)}
-                            />
+                        <label>Whitelist: </label>
+                                  <select value={whitelist} onChange={event=> setWhitelist(event.target.value)}>
+                                  <option value="true">Yes I would like to whitelist</option>
+                                  <option value="false">No I would not like to whitelist</option>
+                                  
+                                </select>
+                          
+                  
                         </div>
                         <br/>
                         <div className="input-group">
@@ -69,8 +73,12 @@ function ArtGallery() {
                     </form>
                 </div>
             </div>
-        </div></>
+        </div>
+        </Popup>
+            </div></>
+        
           )}
+          
         </Authenticator>
       );
 }
