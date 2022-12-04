@@ -12,4 +12,13 @@ type Settings @model @auth(rules: [{allow: public}]) {
   Notification_Setting: String
   Profile_Setting: String
 }
- 
+
+type Notification @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  blockchain: String
+  contract_address: String
+  file: String
+  image_url: String
+  marketplace: String
+  user: String
+}

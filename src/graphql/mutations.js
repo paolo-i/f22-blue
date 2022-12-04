@@ -10,6 +10,9 @@ export const createArtwork = /* GraphQL */ `
       id
       Art_name
       Art_address
+      Whitelist_art
+      User_ID
+      token_ID
       createdAt
       updatedAt
       _version
@@ -27,6 +30,9 @@ export const updateArtwork = /* GraphQL */ `
       id
       Art_name
       Art_address
+      Whitelist_art
+      User_ID
+      token_ID
       createdAt
       updatedAt
       _version
@@ -44,6 +50,9 @@ export const deleteArtwork = /* GraphQL */ `
       id
       Art_name
       Art_address
+      Whitelist_art
+      User_ID
+      token_ID
       createdAt
       updatedAt
       _version
@@ -61,27 +70,11 @@ export const createSettings = /* GraphQL */ `
       id
       Notification_Setting
       Profile_Setting
-      User {
-        id
-        Fname
-        Lname
-        DOB
-        Email
-        Phone_number
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        userSettingsId
-        userProfileId
-      }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
-      settingsUserId
     }
   }
 `;
@@ -94,27 +87,11 @@ export const updateSettings = /* GraphQL */ `
       id
       Notification_Setting
       Profile_Setting
-      User {
-        id
-        Fname
-        Lname
-        DOB
-        Email
-        Phone_number
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        userSettingsId
-        userProfileId
-      }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
-      settingsUserId
     }
   }
 `;
@@ -127,297 +104,74 @@ export const deleteSettings = /* GraphQL */ `
       id
       Notification_Setting
       Profile_Setting
-      User {
-        id
-        Fname
-        Lname
-        DOB
-        Email
-        Phone_number
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        userSettingsId
-        userProfileId
-      }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
-      settingsUserId
     }
   }
 `;
-export const createProfile = /* GraphQL */ `
-  mutation CreateProfile(
-    $input: CreateProfileInput!
-    $condition: ModelProfileConditionInput
+export const createNotification = /* GraphQL */ `
+  mutation CreateNotification(
+    $input: CreateNotificationInput!
+    $condition: ModelNotificationConditionInput
   ) {
-    createProfile(input: $input, condition: $condition) {
+    createNotification(input: $input, condition: $condition) {
       id
-      Username
-      Password
-      User {
-        id
-        Fname
-        Lname
-        DOB
-        Email
-        Phone_number
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        userSettingsId
-        userProfileId
-      }
-      Settings {
-        id
-        Notification_Setting
-        Profile_Setting
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        settingsUserId
-      }
+      blockchain
+      contract_address
+      file
+      image_url
+      marketplace
+      user
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
-      profileUserId
-      profileSettingsId
     }
   }
 `;
-export const updateProfile = /* GraphQL */ `
-  mutation UpdateProfile(
-    $input: UpdateProfileInput!
-    $condition: ModelProfileConditionInput
+export const updateNotification = /* GraphQL */ `
+  mutation UpdateNotification(
+    $input: UpdateNotificationInput!
+    $condition: ModelNotificationConditionInput
   ) {
-    updateProfile(input: $input, condition: $condition) {
+    updateNotification(input: $input, condition: $condition) {
       id
-      Username
-      Password
-      User {
-        id
-        Fname
-        Lname
-        DOB
-        Email
-        Phone_number
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        userSettingsId
-        userProfileId
-      }
-      Settings {
-        id
-        Notification_Setting
-        Profile_Setting
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        settingsUserId
-      }
+      blockchain
+      contract_address
+      file
+      image_url
+      marketplace
+      user
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
-      profileUserId
-      profileSettingsId
     }
   }
 `;
-export const deleteProfile = /* GraphQL */ `
-  mutation DeleteProfile(
-    $input: DeleteProfileInput!
-    $condition: ModelProfileConditionInput
+export const deleteNotification = /* GraphQL */ `
+  mutation DeleteNotification(
+    $input: DeleteNotificationInput!
+    $condition: ModelNotificationConditionInput
   ) {
-    deleteProfile(input: $input, condition: $condition) {
+    deleteNotification(input: $input, condition: $condition) {
       id
-      Username
-      Password
-      User {
-        id
-        Fname
-        Lname
-        DOB
-        Email
-        Phone_number
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        userSettingsId
-        userProfileId
-      }
-      Settings {
-        id
-        Notification_Setting
-        Profile_Setting
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        settingsUserId
-      }
+      blockchain
+      contract_address
+      file
+      image_url
+      marketplace
+      user
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
-      profileUserId
-      profileSettingsId
-    }
-  }
-`;
-export const createUser = /* GraphQL */ `
-  mutation CreateUser(
-    $input: CreateUserInput!
-    $condition: ModelUserConditionInput
-  ) {
-    createUser(input: $input, condition: $condition) {
-      id
-      Fname
-      Lname
-      DOB
-      Email
-      Phone_number
-      Settings {
-        id
-        Notification_Setting
-        Profile_Setting
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        settingsUserId
-      }
-      Profile {
-        id
-        Username
-        Password
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        profileUserId
-        profileSettingsId
-      }
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-      userSettingsId
-      userProfileId
-    }
-  }
-`;
-export const updateUser = /* GraphQL */ `
-  mutation UpdateUser(
-    $input: UpdateUserInput!
-    $condition: ModelUserConditionInput
-  ) {
-    updateUser(input: $input, condition: $condition) {
-      id
-      Fname
-      Lname
-      DOB
-      Email
-      Phone_number
-      Settings {
-        id
-        Notification_Setting
-        Profile_Setting
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        settingsUserId
-      }
-      Profile {
-        id
-        Username
-        Password
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        profileUserId
-        profileSettingsId
-      }
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-      userSettingsId
-      userProfileId
-    }
-  }
-`;
-export const deleteUser = /* GraphQL */ `
-  mutation DeleteUser(
-    $input: DeleteUserInput!
-    $condition: ModelUserConditionInput
-  ) {
-    deleteUser(input: $input, condition: $condition) {
-      id
-      Fname
-      Lname
-      DOB
-      Email
-      Phone_number
-      Settings {
-        id
-        Notification_Setting
-        Profile_Setting
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        settingsUserId
-      }
-      Profile {
-        id
-        Username
-        Password
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        profileUserId
-        profileSettingsId
-      }
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-      userSettingsId
-      userProfileId
     }
   }
 `;

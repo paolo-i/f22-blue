@@ -9,7 +9,9 @@
     "@testing-library/user-event": "^13.5.0",
     "aws-amplify": "^4.3.42",
     "axios": "^1.2.0",
+    "dynamodb": "^1.3.0",
     "graphql": "^15.8.0",
+    "queries": "^0.1.0",
     "ra-data-graphql": "^4.4.3",
     "react": "^18.2.0",
     "react-bootstrap": "^2.6.0",
@@ -19,12 +21,8 @@
     "react-router-dom": "^6.4.2",
     "react-scripts": "5.0.1",
     "react-signature-canvas": "^1.0.6",
-<<<<<<< HEAD
     "reactjs-popup": "^2.0.5",
-    "semantic-ui-react": "^2.1.3",
-=======
     "semantic-ui-react": "^2.1.4",
->>>>>>> 609064a (Refactor login/register component)
     "web-vitals": "^2.1.4"
   },
   "scripts": {
