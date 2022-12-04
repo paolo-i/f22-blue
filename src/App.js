@@ -9,6 +9,7 @@ import AccountSettings from "./pages/AccountSettingsPage";
 import LoginAndRegistrationPage from "./pages/LoginAndRegistrationPage";
 import ESignaturePage from "./pages/ESignaturePage";
 import ArtGallery from "./pages/UserArtGalleryPage";
+import Settings from "./pages/SettingsPage";
 
 function App() {
   return (
@@ -34,6 +35,12 @@ function App() {
           element={<Navigate to="/notifications" />}
         />
         <Route path="/notifications" element={<Notifications />} />
+
+        <Route
+          path="/pages/SettingsPage.js"
+          element={<Navigate to="/settings" />}
+        />
+        <Route path="/Settings" element={<Settings />} />
 
         <Route
           path="/pages/AccountSettingsPage.js"

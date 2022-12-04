@@ -196,14 +196,8 @@ const components = {
 
 const LoginAndRegistrationPage = () => {
   return (
-    <View backgroundColor="#0b1f3a" height="100vh" width="100vw">
-      <Flex
-        direction="row"
-        justifyContent="center"
-        alignItems="center"
-        height="100vh"
-        overflow="hidden"
-      >
+    <View backgroundColor="#2F486E" height="100vh" width="100vw">
+      
         <Authenticator
           // loginMechanisms may be changed to "email"
           loginMechanisms={["username"]}
@@ -211,14 +205,9 @@ const LoginAndRegistrationPage = () => {
           components={components}
         >
           {({ signOut, user }) => (
-            <main>
-              <h1>Hello {user.username}</h1>
-              <Home user/>
-              <button onClick={signOut}>Sign out</button>
-            </main>
+            <Home user/>
           )}
         </Authenticator>
-      </Flex>
     </View>
   );
 };

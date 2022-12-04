@@ -4,9 +4,10 @@ import { schema } from './schema';
 
 
 
-const { Artwork, Settings } = initSchema(schema);
+const { Artwork, Settings, Notification } = initSchema(schema);
 
 export {
   Artwork,
-  Settings
+  Settings,
+  Notification
 };

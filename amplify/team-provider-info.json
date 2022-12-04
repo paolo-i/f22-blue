@@ -31,13 +31,24 @@
         "dmcafunction": {
           "deploymentBucketName": "amplify-artguardianprototype-staging-184738-deployment",
           "s3Key": "amplify-builds/dmcafunction-4d5473734e3464543443-build.zip"
-        }
+        },
+        "fetchNotificationsInfo": {}
       },
       "storage": {
         "s3artworkpics": {},
         "nfttable": {},
         "dmcadatatable": {},
-        "artInformationDynamoDB": {}
+        "artInformationDynamoDB": {},
+        "notifications": {
+          "tableName": "notifications",
+          "region": "us-east-1",
+          "arn": "arn:aws:dynamodb:us-east-1:142735167214:table/notifications",
+          "partitionKeyName": "token_id",
+          "partitionKeyType": "S"
+        }
+      },
+      "api": {
+        "ArtGuardianPrototype": {}
       }
     }
   }

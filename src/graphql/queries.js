@@ -7,6 +7,9 @@ export const getArtwork = /* GraphQL */ `
       id
       Art_name
       Art_address
+      Whitelist_art
+      User_ID
+      token_ID
       createdAt
       updatedAt
       _version
@@ -26,6 +29,9 @@ export const listArtworks = /* GraphQL */ `
         id
         Art_name
         Art_address
+        Whitelist_art
+        User_ID
+        token_ID
         createdAt
         updatedAt
         _version
@@ -54,6 +60,9 @@ export const syncArtworks = /* GraphQL */ `
         id
         Art_name
         Art_address
+        Whitelist_art
+        User_ID
+        token_ID
         createdAt
         updatedAt
         _version
@@ -71,27 +80,11 @@ export const getSettings = /* GraphQL */ `
       id
       Notification_Setting
       Profile_Setting
-      User {
-        id
-        Fname
-        Lname
-        DOB
-        Email
-        Phone_number
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        userSettingsId
-        userProfileId
-      }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
-      settingsUserId
     }
   }
 `;
@@ -111,7 +104,6 @@ export const listSettings = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        settingsUserId
       }
       nextToken
       startedAt
@@ -140,87 +132,64 @@ export const syncSettings = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        settingsUserId
       }
       nextToken
       startedAt
     }
   }
 `;
-export const getProfile = /* GraphQL */ `
-  query GetProfile($id: ID!) {
-    getProfile(id: $id) {
+export const getNotification = /* GraphQL */ `
+  query GetNotification($id: ID!) {
+    getNotification(id: $id) {
       id
-      Username
-      Password
-      User {
-        id
-        Fname
-        Lname
-        DOB
-        Email
-        Phone_number
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        userSettingsId
-        userProfileId
-      }
-      Settings {
-        id
-        Notification_Setting
-        Profile_Setting
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        settingsUserId
-      }
+      blockchain
+      contract_address
+      file
+      image_url
+      marketplace
+      user
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
-      profileUserId
-      profileSettingsId
     }
   }
 `;
-export const listProfiles = /* GraphQL */ `
-  query ListProfiles(
-    $filter: ModelProfileFilterInput
+export const listNotifications = /* GraphQL */ `
+  query ListNotifications(
+    $filter: ModelNotificationFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listProfiles(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listNotifications(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        Username
-        Password
+        blockchain
+        contract_address
+        file
+        image_url
+        marketplace
+        user
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        profileUserId
-        profileSettingsId
       }
       nextToken
       startedAt
     }
   }
 `;
-export const syncProfiles = /* GraphQL */ `
-  query SyncProfiles(
-    $filter: ModelProfileFilterInput
+export const syncNotifications = /* GraphQL */ `
+  query SyncNotifications(
+    $filter: ModelNotificationFilterInput
     $limit: Int
     $nextToken: String
     $lastSync: AWSTimestamp
   ) {
-    syncProfiles(
+    syncNotifications(
       filter: $filter
       limit: $limit
       nextToken: $nextToken
@@ -228,117 +197,17 @@ export const syncProfiles = /* GraphQL */ `
     ) {
       items {
         id
-        Username
-        Password
+        blockchain
+        contract_address
+        file
+        image_url
+        marketplace
+        user
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        profileUserId
-        profileSettingsId
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const getUser = /* GraphQL */ `
-  query GetUser($id: ID!) {
-    getUser(id: $id) {
-      id
-      Fname
-      Lname
-      DOB
-      Email
-      Phone_number
-      Settings {
-        id
-        Notification_Setting
-        Profile_Setting
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        settingsUserId
-      }
-      Profile {
-        id
-        Username
-        Password
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        profileUserId
-        profileSettingsId
-      }
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-      userSettingsId
-      userProfileId
-    }
-  }
-`;
-export const listUsers = /* GraphQL */ `
-  query ListUsers(
-    $filter: ModelUserFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        Fname
-        Lname
-        DOB
-        Email
-        Phone_number
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        userSettingsId
-        userProfileId
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const syncUsers = /* GraphQL */ `
-  query SyncUsers(
-    $filter: ModelUserFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncUsers(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        Fname
-        Lname
-        DOB
-        Email
-        Phone_number
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        userSettingsId
-        userProfileId
       }
       nextToken
       startedAt

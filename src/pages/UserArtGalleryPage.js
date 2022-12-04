@@ -23,7 +23,7 @@ function ArtGallery() {
             <><NavBar/>
             <div>
               <h1 style = {{ 'text-align': 'center' }} > {user.username}'s Gallery</h1>
-              <Popup trigger = {<AmplifyS3Album level="private"/>} 
+              <Popup trigger = {<AmplifyS3Album level="protected"/>} 
               position = "right center">
               
 

@@ -7,6 +7,9 @@ export const onCreateArtwork = /* GraphQL */ `
       id
       Art_name
       Art_address
+      Whitelist_art
+      User_ID
+      token_ID
       createdAt
       updatedAt
       _version
@@ -21,6 +24,9 @@ export const onUpdateArtwork = /* GraphQL */ `
       id
       Art_name
       Art_address
+      Whitelist_art
+      User_ID
+      token_ID
       createdAt
       updatedAt
       _version
@@ -35,6 +41,9 @@ export const onDeleteArtwork = /* GraphQL */ `
       id
       Art_name
       Art_address
+      Whitelist_art
+      User_ID
+      token_ID
       createdAt
       updatedAt
       _version
@@ -49,27 +58,11 @@ export const onCreateSettings = /* GraphQL */ `
       id
       Notification_Setting
       Profile_Setting
-      User {
-        id
-        Fname
-        Lname
-        DOB
-        Email
-        Phone_number
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        userSettingsId
-        userProfileId
-      }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
-      settingsUserId
     }
   }
 `;
@@ -79,27 +72,11 @@ export const onUpdateSettings = /* GraphQL */ `
       id
       Notification_Setting
       Profile_Setting
-      User {
-        id
-        Fname
-        Lname
-        DOB
-        Email
-        Phone_number
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        userSettingsId
-        userProfileId
-      }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
-      settingsUserId
     }
   }
 `;
@@ -109,279 +86,65 @@ export const onDeleteSettings = /* GraphQL */ `
       id
       Notification_Setting
       Profile_Setting
-      User {
-        id
-        Fname
-        Lname
-        DOB
-        Email
-        Phone_number
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        userSettingsId
-        userProfileId
-      }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
-      settingsUserId
     }
   }
 `;
-export const onCreateProfile = /* GraphQL */ `
-  subscription OnCreateProfile {
-    onCreateProfile {
+export const onCreateNotification = /* GraphQL */ `
+  subscription OnCreateNotification {
+    onCreateNotification {
       id
-      Username
-      Password
-      User {
-        id
-        Fname
-        Lname
-        DOB
-        Email
-        Phone_number
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        userSettingsId
-        userProfileId
-      }
-      Settings {
-        id
-        Notification_Setting
-        Profile_Setting
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        settingsUserId
-      }
+      blockchain
+      contract_address
+      file
+      image_url
+      marketplace
+      user
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
-      profileUserId
-      profileSettingsId
     }
   }
 `;
-export const onUpdateProfile = /* GraphQL */ `
-  subscription OnUpdateProfile {
-    onUpdateProfile {
+export const onUpdateNotification = /* GraphQL */ `
+  subscription OnUpdateNotification {
+    onUpdateNotification {
       id
-      Username
-      Password
-      User {
-        id
-        Fname
-        Lname
-        DOB
-        Email
-        Phone_number
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        userSettingsId
-        userProfileId
-      }
-      Settings {
-        id
-        Notification_Setting
-        Profile_Setting
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        settingsUserId
-      }
+      blockchain
+      contract_address
+      file
+      image_url
+      marketplace
+      user
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
-      profileUserId
-      profileSettingsId
     }
   }
 `;
-export const onDeleteProfile = /* GraphQL */ `
-  subscription OnDeleteProfile {
-    onDeleteProfile {
+export const onDeleteNotification = /* GraphQL */ `
+  subscription OnDeleteNotification {
+    onDeleteNotification {
       id
-      Username
-      Password
-      User {
-        id
-        Fname
-        Lname
-        DOB
-        Email
-        Phone_number
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        userSettingsId
-        userProfileId
-      }
-      Settings {
-        id
-        Notification_Setting
-        Profile_Setting
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        settingsUserId
-      }
+      blockchain
+      contract_address
+      file
+      image_url
+      marketplace
+      user
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
-      profileUserId
-      profileSettingsId
-    }
-  }
-`;
-export const onCreateUser = /* GraphQL */ `
-  subscription OnCreateUser {
-    onCreateUser {
-      id
-      Fname
-      Lname
-      DOB
-      Email
-      Phone_number
-      Settings {
-        id
-        Notification_Setting
-        Profile_Setting
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        settingsUserId
-      }
-      Profile {
-        id
-        Username
-        Password
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        profileUserId
-        profileSettingsId
-      }
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-      userSettingsId
-      userProfileId
-    }
-  }
-`;
-export const onUpdateUser = /* GraphQL */ `
-  subscription OnUpdateUser {
-    onUpdateUser {
-      id
-      Fname
-      Lname
-      DOB
-      Email
-      Phone_number
-      Settings {
-        id
-        Notification_Setting
-        Profile_Setting
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        settingsUserId
-      }
-      Profile {
-        id
-        Username
-        Password
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        profileUserId
-        profileSettingsId
-      }
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-      userSettingsId
-      userProfileId
-    }
-  }
-`;
-export const onDeleteUser = /* GraphQL */ `
-  subscription OnDeleteUser {
-    onDeleteUser {
-      id
-      Fname
-      Lname
-      DOB
-      Email
-      Phone_number
-      Settings {
-        id
-        Notification_Setting
-        Profile_Setting
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        settingsUserId
-      }
-      Profile {
-        id
-        Username
-        Password
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        profileUserId
-        profileSettingsId
-      }
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-      userSettingsId
-      userProfileId
     }
   }
 `;
