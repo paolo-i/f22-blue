@@ -69,12 +69,6 @@
     "artInformationDynamoDB": {
       "service": "DynamoDB",
       "providerPlugin": "awscloudformation"
-    },
-    "notifications": {
-      "service": "DynamoDB",
-      "serviceType": "imported",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": []
     }
   }
 }

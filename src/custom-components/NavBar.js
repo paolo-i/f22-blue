@@ -1,80 +1,108 @@
-import React from 'react'
-import { Flex, Button, Image } from '@aws-amplify/ui-react'
-import { FaHome, FaUser, FaBell, FaEllipsisH, FaUpload } from 'react-icons/fa';
+import React from "react";
+import { Flex, Button, Image } from "@aws-amplify/ui-react";
+import {
+  FaHome,
+  FaUser,
+  FaBell,
+  FaEllipsisH,
+  FaUpload,
+  FaCog,
+} from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import { Menu, MenuItem, MenuButton} from '@aws-amplify/ui-react';
-import './NavBar.css'
-import SignOutButton from './SignOutButton';
+import { Menu, MenuItem, MenuButton } from "@aws-amplify/ui-react";
+import "./NavBar.css";
+import SignOutButton from "./SignOutButton";
 
-import logo from "../logo.png"
+import logo from "../logo.png";
 
 const NavBar = () => {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   return (
     <nav className="navbar">
-       
       <Flex
         direction="row"
         justifyContent="space-between"
         alignItems="center"
         alignContent="flex-start"
         wrap="nowrap"
-        gap="1rem">
-
-        <Image 
+        gap="1rem"
+      >
+        <Image
           className="navbar-logo"
           alt="Art Guardian Logo"
           src={logo}
           width="15%"
           height="auto"
-          onClick={() => {navigate('../pages/LandingPage.js')}} />
+          onClick={() => {
+            navigate("../pages/LandingPage.js");
+          }}
+        />
 
         <Flex
-        direction="row"
-        justifyContent="space-between"
-        alignItems="center"
-        alignContent="flex-start"
-        wrap="nowrap"
-        gap="rem">
-          <Button variation="menu" size="large" onClick={() => {navigate('../pages/LandingPage.js')}}>
-            <FaHome
-              ariaLabel="Home"
-              fill='white'
-              />
+          direction="row"
+          justifyContent="space-between"
+          alignItems="center"
+          alignContent="flex-start"
+          wrap="nowrap"
+          gap="rem"
+        >
+          <Button
+            variation="menu"
+            size="large"
+            onClick={() => {
+              navigate("../pages/LandingPage.js");
+            }}
+          >
+            <FaHome ariaLabel="Home" fill="white" />
           </Button>
 
-<Menu     trigger={
-      <MenuButton variation="menu" size="large">
-        <FaUser
-              ariaLabel="Profile"
-              fill='white'
-              />
-      </MenuButton>
-    }>
+          <Menu
+            trigger={
+              <MenuButton variation="menu" size="large">
+                <FaUser ariaLabel="Profile" fill="white" />
+              </MenuButton>
+            }
+          >
+            <MenuItem
+              onClick={() => {
+                navigate("../pages/ProfilePage.js");
+              }}
+            >
+              Profile
+            </MenuItem>
+            <MenuItem
+              onClick={() => {
+                navigate("../pages/UserArtGalleryPage.js");
+              }}
+            >
+              Art Gallery and Upload
+            </MenuItem>
+          </Menu>
 
-<MenuItem onClick={() => {navigate('../pages/ProfilePage.js')}}>Profile</MenuItem>
-<MenuItem onClick={() => {navigate('../pages/UserArtGalleryPage.js')}}>Art Gallery and Upload</MenuItem>
-</Menu>
-            
-
-          <Button variation="menu" size="large" onClick={() => {navigate('../pages/NotificationsPage.js')}}>
-            <FaBell
-              ariaLabel="Notifications"
-              fill='white'
-              />
+          <Button
+            variation="menu"
+            size="large"
+            onClick={() => {
+              navigate("../pages/NotificationsPage.js");
+            }}
+          >
+            <FaBell ariaLabel="Notifications" fill="white" />
           </Button>
-          <Button variation="menu" size="large" onClick={() => {navigate('../pages/SettingsPage.js')}}>
-            <FaEllipsisH
-              ariaLabel="Settings"
-              fill='white'
-              />
+          <Button
+            variation="menu"
+            size="large"
+            onClick={() => {
+              navigate("../pages/SettingsPage.js");
+            }}
+          >
+            <FaCog ariaLabel="Settings" fill="white" />
           </Button>
-          <SignOutButton/>
+          <SignOutButton />
         </Flex>
       </Flex>
     </nav>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;

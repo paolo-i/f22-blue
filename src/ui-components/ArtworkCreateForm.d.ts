@@ -45,5 +45,5 @@ export declare type ArtworkCreateFormProps = React.PropsWithChildren<{
     onCancel?: () => void;
     onChange?: (fields: ArtworkCreateFormInputValues) => ArtworkCreateFormInputValues;
     onValidate?: ArtworkCreateFormValidationValues;
-}>;
+} & React.CSSProperties>;
 export default function ArtworkCreateForm(props: ArtworkCreateFormProps): React.ReactElement;

@@ -36,5 +36,5 @@ export declare type SettingsCreateFormProps = React.PropsWithChildren<{
     onCancel?: () => void;
     onChange?: (fields: SettingsCreateFormInputValues) => SettingsCreateFormInputValues;
     onValidate?: SettingsCreateFormValidationValues;
-}>;
+} & React.CSSProperties>;
 export default function SettingsCreateForm(props: SettingsCreateFormProps): React.ReactElement;
