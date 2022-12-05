@@ -10,6 +10,7 @@ import { listNotifications } from '../graphql/queries';
 Amplify.configure(awsconfig);
 
 export default function Notifications(props) {
+  /*
   const [notifications, setNotifications] = useState([]);
 
   useEffect(() => {
@@ -27,13 +28,14 @@ export default function Notifications(props) {
       console.log('error on fetching notifications', {notifications}, error);
     }
   }
+  */
 
   return (
     <Authenticator>
       {({user }) => (
         <>
             <NavBar />
-              <div class="body">
+              <div class="body">{/*
                 { notifications.map(notification =>{
                   return (
                       <Notification 
@@ -47,6 +49,7 @@ export default function Notifications(props) {
                         />
                   )
                 })}
+              */}
 
                 <div class="body">
                       <Notification 
