@@ -38,5 +38,5 @@ export declare type SettingsUpdateFormProps = React.PropsWithChildren<{
     onCancel?: () => void;
     onChange?: (fields: SettingsUpdateFormInputValues) => SettingsUpdateFormInputValues;
     onValidate?: SettingsUpdateFormValidationValues;
-}>;
+} & React.CSSProperties>;
 export default function SettingsUpdateForm(props: SettingsUpdateFormProps): React.ReactElement;
