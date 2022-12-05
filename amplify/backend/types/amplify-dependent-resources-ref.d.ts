@@ -35,6 +35,14 @@ export type AmplifyDependentResourcesAttributes = {
         "s3artworkpics": {
             "BucketName": "string",
             "Region": "string"
+        },
+        "artInformationDynamoDB": {
+            "Name": "string",
+            "Arn": "string",
+            "StreamArn": "string",
+            "PartitionKeyName": "string",
+            "PartitionKeyType": "string",
+            "Region": "string"
         }
     }
 }

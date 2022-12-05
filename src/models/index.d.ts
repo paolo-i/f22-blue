@@ -1,6 +1,4 @@
 import { ModelInit, MutableModel } from "@aws-amplify/datastore";
-// @ts-ignore
-import { LazyLoading, LazyLoadingDisabled, AsyncItem } from "@aws-amplify/datastore";
 
 type ArtworkMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
@@ -10,120 +8,43 @@ type SettingsMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
 
-type UserMetaData = {
+type NotificationMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
 
-type ProfileMetaData = {
-  readOnlyFields: 'createdAt' | 'updatedAt';
-}
-
-type EagerArtwork = {
+export declare class Artwork {
   readonly id: string;
   readonly Art_name?: string | null;
   readonly Art_address?: string | null;
+  readonly Whitelist_art?: boolean | null;
+  readonly User_ID?: string | null;
+  readonly token_ID?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
+  constructor(init: ModelInit<Artwork, ArtworkMetaData>);
+  static copyOf(source: Artwork, mutator: (draft: MutableModel<Artwork, ArtworkMetaData>) => MutableModel<Artwork, ArtworkMetaData> | void): Artwork;
 }
 
-type LazyArtwork = {
-  readonly id: string;
-  readonly Art_name?: string | null;
-  readonly Art_address?: string | null;
-  readonly createdAt?: string | null;
-  readonly updatedAt?: string | null;
-}
-
-export declare type Artwork = LazyLoading extends LazyLoadingDisabled ? EagerArtwork : LazyArtwork
-
-export declare const Artwork: (new (init: ModelInit<Artwork, ArtworkMetaData>) => Artwork) & {
-  copyOf(source: Artwork, mutator: (draft: MutableModel<Artwork, ArtworkMetaData>) => MutableModel<Artwork, ArtworkMetaData> | void): Artwork;
-}
-
-type EagerSettings = {
+export declare class Settings {
   readonly id: string;
   readonly Notification_Setting?: string | null;
   readonly Profile_Setting?: string | null;
-  readonly User?: User | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
-  readonly settingsUserId?: string | null;
+  constructor(init: ModelInit<Settings, SettingsMetaData>);
+  static copyOf(source: Settings, mutator: (draft: MutableModel<Settings, SettingsMetaData>) => MutableModel<Settings, SettingsMetaData> | void): Settings;
 }
 
-type LazySettings = {
+export declare class Notification {
   readonly id: string;
-  readonly Notification_Setting?: string | null;
-  readonly Profile_Setting?: string | null;
-  readonly User: AsyncItem<User | undefined>;
+  readonly blockchain?: string | null;
+  readonly contract_address?: string | null;
+  readonly file?: string | null;
+  readonly image_url?: string | null;
+  readonly marketplace?: string | null;
+  readonly user?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
-  readonly settingsUserId?: string | null;
-}
-
-export declare type Settings = LazyLoading extends LazyLoadingDisabled ? EagerSettings : LazySettings
-
-export declare const Settings: (new (init: ModelInit<Settings, SettingsMetaData>) => Settings) & {
-  copyOf(source: Settings, mutator: (draft: MutableModel<Settings, SettingsMetaData>) => MutableModel<Settings, SettingsMetaData> | void): Settings;
-}
-
-type EagerUser = {
-  readonly id: string;
-  readonly Fname?: string | null;
-  readonly Lname?: string | null;
-  readonly DOB?: string | null;
-  readonly Email?: string | null;
-  readonly Phone_number?: string | null;
-  readonly Settings?: Settings | null;
-  readonly Profile?: Profile | null;
-  readonly createdAt?: string | null;
-  readonly updatedAt?: string | null;
-}
-
-type LazyUser = {
-  readonly id: string;
-  readonly Fname?: string | null;
-  readonly Lname?: string | null;
-  readonly DOB?: string | null;
-  readonly Email?: string | null;
-  readonly Phone_number?: string | null;
-  readonly Settings: AsyncItem<Settings | undefined>;
-  readonly Profile: AsyncItem<Profile | undefined>;
-  readonly createdAt?: string | null;
-  readonly updatedAt?: string | null;
-}
-
-export declare type User = LazyLoading extends LazyLoadingDisabled ? EagerUser : LazyUser
-
-export declare const User: (new (init: ModelInit<User, UserMetaData>) => User) & {
-  copyOf(source: User, mutator: (draft: MutableModel<User, UserMetaData>) => MutableModel<User, UserMetaData> | void): User;
-}
-
-type EagerProfile = {
-  readonly id: string;
-  readonly Username?: string | null;
-  readonly Password?: string | null;
-  readonly User?: User | null;
-  readonly Settings?: Settings | null;
-  readonly createdAt?: string | null;
-  readonly updatedAt?: string | null;
-  readonly profileUserId?: string | null;
-  readonly profileSettingsId?: string | null;
-}
-
-type LazyProfile = {
-  readonly id: string;
-  readonly Username?: string | null;
-  readonly Password?: string | null;
-  readonly User: AsyncItem<User | undefined>;
-  readonly Settings: AsyncItem<Settings | undefined>;
-  readonly createdAt?: string | null;
-  readonly updatedAt?: string | null;
-  readonly profileUserId?: string | null;
-  readonly profileSettingsId?: string | null;
-}
-
-export declare type Profile = LazyLoading extends LazyLoadingDisabled ? EagerProfile : LazyProfile
-
-export declare const Profile: (new (init: ModelInit<Profile, ProfileMetaData>) => Profile) & {
-  copyOf(source: Profile, mutator: (draft: MutableModel<Profile, ProfileMetaData>) => MutableModel<Profile, ProfileMetaData> | void): Profile;
+  constructor(init: ModelInit<Notification, NotificationMetaData>);
+  static copyOf(source: Notification, mutator: (draft: MutableModel<Notification, NotificationMetaData>) => MutableModel<Notification, NotificationMetaData> | void): Notification;
 }

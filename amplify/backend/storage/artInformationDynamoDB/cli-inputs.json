@@ -1,0 +1,10 @@
+{
+  "resourceName": "artInformationDynamoDB",
+  "tableName": "art_Information_DynamoDB",
+  "partitionKey": {
+    "fieldName": "artId",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

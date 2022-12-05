@@ -23,10 +23,25 @@
         "artguardianprototype80379cc5CreateAuthChallenge": {
           "deploymentBucketName": "amplify-artguardianprototype-staging-184738-deployment",
           "s3Key": "amplify-builds/artguardianprototype80379cc5CreateAuthChallenge-333349654f4735317a70-build.zip"
-        }
+        },
+        "nftmetadatafunction": {
+          "deploymentBucketName": "amplify-artguardianprototype-staging-184738-deployment",
+          "s3Key": "amplify-builds/nftmetadatafunction-6761774f634f5a655463-build.zip"
+        },
+        "dmcafunction": {
+          "deploymentBucketName": "amplify-artguardianprototype-staging-184738-deployment",
+          "s3Key": "amplify-builds/dmcafunction-4d5473734e3464543443-build.zip"
+        },
+        "fetchNotificationsInfo": {}
       },
       "storage": {
-        "s3artworkpics": {}
+        "s3artworkpics": {},
+        "nfttable": {},
+        "dmcadatatable": {},
+        "artInformationDynamoDB": {}
+      },
+      "api": {
+        "ArtGuardianPrototype": {}
       }
     }
   }

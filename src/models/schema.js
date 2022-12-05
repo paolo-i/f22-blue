@@ -24,6 +24,27 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "Whitelist_art": {
+                    "name": "Whitelist_art",
+                    "isArray": false,
+                    "type": "Boolean",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "User_ID": {
+                    "name": "User_ID",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "token_ID": {
+                    "name": "token_ID",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -90,20 +111,6 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "User": {
-                    "name": "User",
-                    "isArray": false,
-                    "type": {
-                        "model": "User"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "association": {
-                        "connectionType": "HAS_ONE",
-                        "associatedWith": "Settings",
-                        "targetName": "settingsUserId"
-                    }
-                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -119,13 +126,6 @@ export const schema = {
                     "isRequired": false,
                     "attributes": [],
                     "isReadOnly": true
-                },
-                "settingsUserId": {
-                    "name": "settingsUserId",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": false,
-                    "attributes": []
                 }
             },
             "syncable": true,
@@ -153,8 +153,8 @@ export const schema = {
                 }
             ]
         },
-        "User": {
-            "name": "User",
+        "Notification": {
+            "name": "Notification",
             "fields": {
                 "id": {
                     "name": "id",
@@ -163,66 +163,47 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "Fname": {
-                    "name": "Fname",
+                "blockchain": {
+                    "name": "blockchain",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "Lname": {
-                    "name": "Lname",
+                "contract_address": {
+                    "name": "contract_address",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "DOB": {
-                    "name": "DOB",
+                "file": {
+                    "name": "file",
                     "isArray": false,
-                    "type": "AWSDate",
+                    "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "Email": {
-                    "name": "Email",
+                "image_url": {
+                    "name": "image_url",
                     "isArray": false,
-                    "type": "AWSEmail",
+                    "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "Phone_number": {
-                    "name": "Phone_number",
+                "marketplace": {
+                    "name": "marketplace",
                     "isArray": false,
-                    "type": "AWSPhone",
+                    "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "Settings": {
-                    "name": "Settings",
+                "user": {
+                    "name": "user",
                     "isArray": false,
-                    "type": {
-                        "model": "Settings"
-                    },
+                    "type": "String",
                     "isRequired": false,
-                    "attributes": [],
-                    "association": {
-                        "connectionType": "BELONGS_TO",
-                        "targetName": "userSettingsId"
-                    }
-                },
-                "Profile": {
-                    "name": "Profile",
-                    "isArray": false,
-                    "type": {
-                        "model": "Profile"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "association": {
-                        "connectionType": "BELONGS_TO",
-                        "targetName": "userProfileId"
-                    }
+                    "attributes": []
                 },
                 "createdAt": {
                     "name": "createdAt",
@@ -242,115 +223,7 @@ export const schema = {
                 }
             },
             "syncable": true,
-            "pluralName": "Users",
-            "attributes": [
-                {
-                    "type": "model",
-                    "properties": {}
-                },
-                {
-                    "type": "auth",
-                    "properties": {
-                        "rules": [
-                            {
-                                "allow": "public",
-                                "operations": [
-                                    "create",
-                                    "update",
-                                    "delete",
-                                    "read"
-                                ]
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "Profile": {
-            "name": "Profile",
-            "fields": {
-                "id": {
-                    "name": "id",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "Username": {
-                    "name": "Username",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "Password": {
-                    "name": "Password",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "User": {
-                    "name": "User",
-                    "isArray": false,
-                    "type": {
-                        "model": "User"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "association": {
-                        "connectionType": "HAS_ONE",
-                        "associatedWith": "Profile",
-                        "targetName": "profileUserId"
-                    }
-                },
-                "Settings": {
-                    "name": "Settings",
-                    "isArray": false,
-                    "type": {
-                        "model": "Settings"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "association": {
-                        "connectionType": "HAS_ONE",
-                        "associatedWith": "id",
-                        "targetName": "profileSettingsId"
-                    }
-                },
-                "createdAt": {
-                    "name": "createdAt",
-                    "isArray": false,
-                    "type": "AWSDateTime",
-                    "isRequired": false,
-                    "attributes": [],
-                    "isReadOnly": true
-                },
-                "updatedAt": {
-                    "name": "updatedAt",
-                    "isArray": false,
-                    "type": "AWSDateTime",
-                    "isRequired": false,
-                    "attributes": [],
-                    "isReadOnly": true
-                },
-                "profileUserId": {
-                    "name": "profileUserId",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "profileSettingsId": {
-                    "name": "profileSettingsId",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": false,
-                    "attributes": []
-                }
-            },
-            "syncable": true,
-            "pluralName": "Profiles",
+            "pluralName": "Notifications",
             "attributes": [
                 {
                     "type": "model",
@@ -377,6 +250,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "codegenVersion": "3.3.1",
-    "version": "de8ae90f1dcfbab3188beb0bba22f831"
+    "version": "42a95b311c91e16cc56c2d9ade6ca545"
 };
