@@ -50,6 +50,7 @@ export default function Notifications(props) {
                       contract_address={notification.contract_address}
                       img_link={notification.image_url}
                       marketplace_name={notification.marketplace}
+                      original_img={notification.file}
                       user={notification.user}
                     />
                   </div>

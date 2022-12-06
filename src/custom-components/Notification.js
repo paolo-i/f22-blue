@@ -73,7 +73,7 @@ export default function Notification({
                 <Text color="white" padding="0 0 1rem 0" fontWeight={700}>
                   Detected NFT:
                 </Text>
-                <Image src={img_link} height="75%" width="75%" />
+                <Image src={original_img} height="75%" width="75%" />
               </div>
             </Flex>
 
