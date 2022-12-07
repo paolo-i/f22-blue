@@ -1,14 +1,16 @@
 import React, {useState, useRef} from 'react'
 import NavBar from '../custom-components/NavBar'
-import {Authenticator } from '@aws-amplify/ui-react';
+import {Authenticator, Link } from '@aws-amplify/ui-react';
 import Amplify from "aws-amplify";
 import { ScrollView, Text, View, Button, Flex } from '@aws-amplify/ui-react'
 import "./ESignaturePage.css"
 import SignatureCanvas from 'react-signature-canvas'
+import { useLocation } from 'react-router-dom';
 
-const ESignaturePage = (token_id, blockchain, contract_address, img_name, marketplace_name) => {
+export default function ESignaturePage() {
     let sigPad = useRef();
     const [canSubmit, setCanSubmit] = useState();
+    const { state } = useLocation();
 
     const setSubmitButtonStatus = () => {
         setCanSubmit(true);
@@ -23,52 +25,54 @@ const ESignaturePage = (token_id, blockchain, contract_address, img_name, market
         <Authenticator>
             {({user }) => (
             <>
-            <NavBar /><div class="body">
-                      <ScrollView backgroundColor="#f5f5f5" height="400px" maxWidth="100%">
-                          <div class="confirmation-text">
-                              <Text fontSize={18}>
-                                  To OpenSea,
-                                  Art Guardian is acting on behalf of the copyright owner of the art “Triangle”.
-                                  [link and token ID would go here]
-                                  This letter is official notification under the provisions of Section 512(c) of the Digital Millennium Copyright Act (“DMCA”) for removal of the above-referenced copyright infringement(s). Art Guardian hereby requests that you immediately issue a cancellation message as specified in RFC 1036 for the specified postings and prevent the infringer, who is identified by its Web address, from posting the infringing art to your servers in the future. The law requires you to “expeditiously remove or disable access to” the infringing works of art upon receiving this notice. As a service provider, noncompliance may result in a loss of immunity for liability under the DMCA as cited above.
-                              </Text>
-                              <br />
-                              <Text fontSize={18}>
-                                  I have a good faith belief that use of the material in the manner complained of herein is not authorized by the copyright holder, or the law. The information provided is true and accurate to the best of my knowledge. I swear under penalty of perjury that I am the copyright owner or have the authority to act on behalf of the copyright owner.
-                              </Text>
-                              <br />
-                              <Text fontSize={18}>
-                                  Sincerely, <br />
-                                  Art Guardian <br />
-                                  Email <br />
-                                  Address <br />
-                                  Phone Number <br />
-                              </Text>
-                          </div>
-                      </ScrollView>
+            <NavBar />
+            <div class="body">
+                <ScrollView backgroundColor="#f5f5f5" height="400px" maxWidth="100%">
+                    <div class="confirmation-text">
+                        <Text fontSize={18}>
+                            To {state.marketplace_name},<br></br>
+                            Art Guardian is acting on behalf of the copyright owner of the art found on an <Link href={state.img_link} isExternal={true}>NFT on your marketplace</Link><br></br>
+                            Token ID: {state.token_id}<br></br>
+                            Contract Address: {state.contract_address}<br></br>
+                            Detected NFT Link: <Link href={state.img_link} isExternal={true}>{state.img_link}</Link>
+                            <br /><br />
 
-                      <View padding="3rem 0rem">
+                            This letter is official notification under the provisions of Section 512(c) of the Digital Millennium Copyright Act (“DMCA”) for removal of the above-referenced copyright infringement(s). Art Guardian hereby requests that you immediately issue a cancellation message as specified in RFC 1036 for the specified postings and prevent the infringer, who is identified by its Web address, from posting the infringing art to your servers in the future. The law requires you to “expeditiously remove or disable access to” the infringing works of art upon receiving this notice. As a service provider, noncompliance may result in a loss of immunity for liability under the DMCA as cited above.
+                        </Text>
+                        <br />
+                        <Text fontSize={18}>
+                            I have a good faith belief that use of the material in the manner complained of herein is not authorized by the copyright holder, or the law. The information provided is true and accurate to the best of my knowledge. I swear under penalty of perjury that I am the copyright owner or have the authority to act on behalf of the copyright owner.
+                        </Text>
+                        <br />
+                        <Text fontSize={18}>
+                            Sincerely, <br />
+                            Art Guardian user {user.username}<br />
+                            {user.attributes.email} <br />
+                            Address <br />
+                        </Text>
+                    </div>
+                </ScrollView>
 
-                          <Text color="white">*Required</Text>
-                          <Flex justifyContent="space-between">
-                              <SignatureCanvas ref={sigPad} backgroundColor='#f5f5f5' canvasProps={{ className: 'sig-canvas' }} onBegin={setSubmitButtonStatus} />
-                              <Button variation="primary"
-                                  className='clear-signature-button'
-                                  onClick={clearSignature}
-                                  size="large">Clear</Button>
-                              <Button variation="primary"
-                                  width="150px"
-                                  className='submit-button'
-                                  isDisabled={!canSubmit}
-                                  size="large">Submit</Button>
-                          </Flex>
-                      </View>
-                  </div>
+                <View padding="3rem 0rem">
+
+                    <Text color="white">*Required</Text>
+                    <Flex justifyContent="space-between">
+                        <SignatureCanvas ref={sigPad} backgroundColor='#f5f5f5' canvasProps={{ className: 'sig-canvas' }} onBegin={setSubmitButtonStatus} />
+                        <Button variation="primary"
+                            className='clear-signature-button'
+                            onClick={clearSignature}
+                            size="large">Clear</Button>
+                        <Button variation="primary"
+                            width="150px"
+                            className='submit-button'
+                            isDisabled={!canSubmit}
+                            size="large">Submit</Button>
+                    </Flex>
+                </View>
+            </div>
             </>
             )
         }
     </Authenticator>
   )
 }
-
-export default ESignaturePage

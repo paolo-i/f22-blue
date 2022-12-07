@@ -1,17 +1,12 @@
 import NavBar from "../custom-components/NavBar";
 import Notification from "../custom-components/Notification";
-import { Authenticator, Pagination, ScrollView } from "@aws-amplify/ui-react";
+import { Authenticator, ScrollView } from "@aws-amplify/ui-react";
 
 import awsconfig from "./../aws-exports";
 import { Amplify } from "aws-amplify";
 import { useState } from "react";
 export const API_BASE_URL =
   "https://iylmn8w1ye.execute-api.us-east-1.amazonaws.com/staging";
-
-/*
-import { useEffect, useState } from "react";
-import { listNotifications } from '../graphql/queries';
-*/
 
 Amplify.configure(awsconfig);
 
@@ -50,6 +45,7 @@ export default function Notifications(props) {
                       contract_address={notification.contract_address}
                       img_link={notification.image_url}
                       marketplace_name={notification.marketplace}
+                      original_img={notification.file}
                       user={notification.user}
                     />
                   </div>

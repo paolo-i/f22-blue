@@ -1,9 +1,27 @@
 import { Text, Flex, CheckboxField, Button } from "@aws-amplify/ui-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function Confirmation() {
+export default function Confirmation({
+  token_id,
+  contract_address,
+  img_link,
+  marketplace_name
+}) {
   const [firstChecked, setFirstChecked] = useState(false);
   const [secondChecked, setSecondChecked] = useState(false);
+  const navigate = useNavigate();
+
+  function toEsignature() {
+    navigate('/esign', {
+      state:{
+        token_id: token_id,
+        contract_address: contract_address,
+        img_link: img_link,
+        marketplace_name: marketplace_name
+        }});
+  }
+
   return (
     <Flex
       direction="column"
@@ -50,6 +68,11 @@ export default function Confirmation() {
         backgroundColor={firstChecked && secondChecked ? "yellow" : "#575a5e"}
         borderRadius="50px"
         border="black"
+        onClick={(e) => {
+          setFirstChecked(e.target.checked)
+          setSecondChecked(e.target.checked)
+          toEsignature()
+        }}
       >
         Continue
       </Button>

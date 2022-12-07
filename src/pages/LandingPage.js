@@ -1,11 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import "./LandingPage.css";
-import {Authenticator } from '@aws-amplify/ui-react';
+import {Authenticator, Link } from '@aws-amplify/ui-react';
 import awsconfig from "../aws-exports";
 import NavBar from "../custom-components/NavBar";
 import { View } from "@aws-amplify/ui-react";
 
+export const API_BASE_URL =
+  "https://iylmn8w1ye.execute-api.us-east-1.amazonaws.com/staging";
+
 export default function Home( props){
+  const [numNotifications, setNumNotifications] = useState();
+
+  fetch(`${API_BASE_URL}`)
+    .then((response) =>
+      //handle response
+      response.json()
+    )
+    .then((data) => {
+      //handle data
+      setNumNotifications(data.body.length);
+      console.log(data);
+    })
+    .catch((error) => {
+      //handle error
+      console.log("Error loading notifications");
+    });
+
   return (
     <>
    
@@ -16,7 +36,7 @@ export default function Home( props){
         
         <View padding="1rem 2rem">
             <h1>Welcome back, {user.username}</h1>
-            <h2>You have no new notifications</h2>
+            <h2>You have {numNotifications} notifications</h2>
           </View><View backgroundColor="#263A58" padding="1rem 2rem">
               <h1>Art Protection Guidelines</h1>
               <p>Protecting art begins with you.</p>
