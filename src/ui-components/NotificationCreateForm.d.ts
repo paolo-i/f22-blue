@@ -48,5 +48,5 @@ export declare type NotificationCreateFormProps = React.PropsWithChildren<{
     onCancel?: () => void;
     onChange?: (fields: NotificationCreateFormInputValues) => NotificationCreateFormInputValues;
     onValidate?: NotificationCreateFormValidationValues;
-} & React.CSSProperties>;
+}>;
 export default function NotificationCreateForm(props: NotificationCreateFormProps): React.ReactElement;

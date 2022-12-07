@@ -47,5 +47,5 @@ export declare type ArtworkUpdateFormProps = React.PropsWithChildren<{
     onCancel?: () => void;
     onChange?: (fields: ArtworkUpdateFormInputValues) => ArtworkUpdateFormInputValues;
     onValidate?: ArtworkUpdateFormValidationValues;
-} & React.CSSProperties>;
+}>;
 export default function ArtworkUpdateForm(props: ArtworkUpdateFormProps): React.ReactElement;

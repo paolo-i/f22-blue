@@ -7,12 +7,14 @@ import { useState } from 'react'
 import UseWriteArtDynamoDB from '../custom-components/UseWriteArtDynamoDB';
 
 function ArtGallery() {
+  
 
   const {createArt, status} = UseWriteArtDynamoDB()
   const [username, setUsername] = useState('')
   const [fileName, setfileName] = useState('')
   const [whitelist, setWhitelist] = useState(true)
   const [tokenId, setTokenId] = useState('')
+  
   const handleSubmit = (event) => {
       event.preventDefault();
       createArt({ username, fileName, whitelist, tokenId })
@@ -20,10 +22,13 @@ function ArtGallery() {
       return (
         <Authenticator>
           {({user }) => (
+            
             <><NavBar/>
+           
             <div>
+              
               <h1 style = {{ 'text-align': 'center' }} > {user.username}'s Gallery</h1>
-              <Popup trigger = {<AmplifyS3Album level="protected"/>} 
+              <Popup trigger = {<AmplifyS3Album path={user.username.concat("/")} />}
               position = "right center">
               
 

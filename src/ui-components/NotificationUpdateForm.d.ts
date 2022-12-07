@@ -50,5 +50,5 @@ export declare type NotificationUpdateFormProps = React.PropsWithChildren<{
     onCancel?: () => void;
     onChange?: (fields: NotificationUpdateFormInputValues) => NotificationUpdateFormInputValues;
     onValidate?: NotificationUpdateFormValidationValues;
-} & React.CSSProperties>;
+}>;
 export default function NotificationUpdateForm(props: NotificationUpdateFormProps): React.ReactElement;
