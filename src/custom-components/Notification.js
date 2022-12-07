@@ -20,7 +20,7 @@ export default function Notification({
   contract_address,
   img_link,
   original_img,
-  marketplace_name
+  marketplace_name,
 }) {
   const [showConfirmed, setShowConfirmed] = useState(false);
 
@@ -28,11 +28,12 @@ export default function Notification({
     if (showConfirmed) {
       return (
         <>
-          <Confirmation 
+          <Confirmation
             token_id={token_id}
             contract_address={contract_address}
             img_link={img_link}
-            marketplace_name={marketplace_name}/>
+            marketplace_name={marketplace_name}
+          />
           <Button
             onClick={() => setShowConfirmed(!showConfirmed)}
             backgroundColor="red"
@@ -70,13 +71,13 @@ export default function Notification({
                 <Text color="white" padding="0 0 1rem 0" fontWeight={700}>
                   Your artwork:
                 </Text>
-                <Image src={img_link} height="75%" width="75%" />
+                <Image src={original_img} height="75%" width="75%" />
               </div>
               <div>
                 <Text color="white" padding="0 0 1rem 0" fontWeight={700}>
                   Detected NFT:
                 </Text>
-                <Image src={original_img} height="75%" width="75%" />
+                <Image src={img_link} height="75%" width="75%" />
               </div>
             </Flex>
 
