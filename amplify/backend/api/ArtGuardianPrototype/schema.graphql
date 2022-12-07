@@ -21,4 +21,4 @@ type Notification @model @auth(rules: [{allow: public}]) {
   image_url: String
   marketplace: String
   user: String
-}
+} 

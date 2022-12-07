@@ -69,6 +69,10 @@
     "artInformationDynamoDB": {
       "service": "DynamoDB",
       "providerPlugin": "awscloudformation"
+    },
+    "DmcaDBTable": {
+      "service": "DynamoDB",
+      "providerPlugin": "awscloudformation"
     }
   }
 }

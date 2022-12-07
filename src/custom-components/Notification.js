@@ -11,7 +11,6 @@ import {
 import Confirmation from "./Confirmation";
 import { Amplify } from "aws-amplify";
 import awsconfig from "../aws-exports";
-import { render } from "@testing-library/react";
 
 Amplify.configure(awsconfig);
 
@@ -21,7 +20,7 @@ export default function Notification({
   contract_address,
   img_link,
   original_img,
-  marketplace_name,
+  marketplace_name
 }) {
   const [showConfirmed, setShowConfirmed] = useState(false);
 
@@ -29,7 +28,11 @@ export default function Notification({
     if (showConfirmed) {
       return (
         <>
-          <Confirmation />
+          <Confirmation 
+            token_id={token_id}
+            contract_address={contract_address}
+            img_link={img_link}
+            marketplace_name={marketplace_name}/>
           <Button
             onClick={() => setShowConfirmed(!showConfirmed)}
             backgroundColor="red"

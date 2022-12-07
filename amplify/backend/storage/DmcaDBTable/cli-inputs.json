@@ -1,0 +1,10 @@
+{
+  "resourceName": "DmcaDBTable",
+  "tableName": "dmca_information_DynamoDB",
+  "partitionKey": {
+    "fieldName": "id",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}
