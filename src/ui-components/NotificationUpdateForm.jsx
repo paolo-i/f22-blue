@@ -322,10 +322,7 @@ export default function NotificationUpdateForm(props) {
           onClick={resetStateValues}
           {...getOverrideProps(overrides, "ResetButton")}
         ></Button>
-        <Flex
-          gap="15px"
-          {...getOverrideProps(overrides, "RightAlignCTASubFlex")}
-        >
+        <Flex {...getOverrideProps(overrides, "RightAlignCTASubFlex")}>
           <Button
             children="Cancel"
             type="button"

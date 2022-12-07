@@ -301,10 +301,7 @@ export default function NotificationCreateForm(props) {
           onClick={resetStateValues}
           {...getOverrideProps(overrides, "ClearButton")}
         ></Button>
-        <Flex
-          gap="15px"
-          {...getOverrideProps(overrides, "RightAlignCTASubFlex")}
-        >
+        <Flex {...getOverrideProps(overrides, "RightAlignCTASubFlex")}>
           <Button
             children="Cancel"
             type="button"
