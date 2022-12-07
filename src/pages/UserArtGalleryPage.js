@@ -7,6 +7,7 @@ import { useState } from 'react'
 import UseWriteArtDynamoDB from '../custom-components/UseWriteArtDynamoDB';
 
 function ArtGallery() {
+  
 
   const {createArt, status} = UseWriteArtDynamoDB()
   const [username, setUsername] = useState('')
@@ -27,7 +28,7 @@ function ArtGallery() {
             <div>
               
               <h1 style = {{ 'text-align': 'center' }} > {user.username}'s Gallery</h1>
-              <Popup trigger = {<AmplifyS3Album level="protected"/>}
+              <Popup trigger = {<AmplifyS3Album path={user.username.concat("/")} />}
               position = "right center">
               
 
