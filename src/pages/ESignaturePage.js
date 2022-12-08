@@ -8,21 +8,22 @@ import SignatureCanvas from 'react-signature-canvas'
 import { useLocation } from 'react-router-dom';
 import UserWriteDMCADynamoDB from '../custom-components/UseWriteDMCADynamodb'
 
-
-
-const {createdmca, status} = UserWriteDMCADynamoDB()
-const [username, setUsername] = useState(user.username)
-const [fileName, setfileName] = useState(state.fileName)
-const [contract_address,setcontract_address]=useState(state.contract_address)
-const [img_link, setimage_link] = useState(state.img_link)
-const [marketplace_name, setWhitelist] = useState(state.marketplace_name)
-const [tokenId, setTokenId] = useState(state.tokenId)
-
-
 export default function ESignaturePage() {
     let sigPad = useRef();
     const [canSubmit, setCanSubmit] = useState();
     const { state } = useLocation();
+
+    const {createDMCA, status} = UserWriteDMCADynamoDB()
+    const [username, setUsername] = useState(state.user)
+    const [fileName, setfileName] = useState(state.fileName)
+    const [contract_address,setcontract_address]=useState(state.contract_address)
+    const [marketplace_name, setWhitelist] = useState(state.marketplace_name)
+    const [tokenId, setTokenId] = useState(state.tokenId)
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        createDMCA({ username, fileName, contract_address, tokenId })
+    };
 
     const setSubmitButtonStatus = () => {
         setCanSubmit(true);
@@ -32,8 +33,6 @@ export default function ESignaturePage() {
         sigPad.current.clear();
         setCanSubmit(false);
     }
-    createdmca({ username,img_link,contract_address, tokenId })
-
 
   return (
         <Authenticator>
@@ -80,6 +79,7 @@ export default function ESignaturePage() {
                             width="150px"
                             className='submit-button'
                             isDisabled={!canSubmit}
+                            onSubmit={handleSubmit}
                             size="large">Submit</Button>
                     </Flex>
                 </View>

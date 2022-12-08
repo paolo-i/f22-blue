@@ -45,8 +45,7 @@
           "arn": "arn:aws:dynamodb:us-east-1:142735167214:table/notifications",
           "partitionKeyName": "token_id",
           "partitionKeyType": "S"
-        },
-        "DmcaDBTable": {}
+        }
       },
       "api": {
         "ArtGuardianPrototype": {}
