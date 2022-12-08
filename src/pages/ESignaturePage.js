@@ -46,9 +46,9 @@ export default function ESignaturePage() {
                         <br />
                         <Text fontSize={18}>
                             Sincerely, <br />
-                            Art Guardian user {user.username}<br />
-                            {user.attributes.email} <br />
-                            Address <br />
+                            Art Guardian Team<br />
+                            ArtGuardian2022@gmail.com <br />
+                            4600 Hampton Blvd, Norfolk, VA 23529 <br />
                         </Text>
                     </div>
                 </ScrollView>
