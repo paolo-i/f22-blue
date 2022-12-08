@@ -8,6 +8,7 @@ import { useState } from "react";
 export const API_BASE_URL =
   "https://iylmn8w1ye.execute-api.us-east-1.amazonaws.com/staging";
 
+
 Amplify.configure(awsconfig);
 
 export default function Notifications(props) {
