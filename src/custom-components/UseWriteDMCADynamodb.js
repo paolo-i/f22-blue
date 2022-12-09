@@ -17,7 +17,7 @@ function UseWriteDMCADynamoDB() {
             market_place : dmca.market_place,
             username : dmca.username,
             tokenID  : dmca.tokenID,
-            nftAddress : dmca.nftAddress,
+            contract_address : dmca.contract_address,
             dmca_status : dmca.dmca_status
         });
 

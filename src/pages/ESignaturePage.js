@@ -16,14 +16,14 @@ export default function ESignaturePage() {
     const {createDMCA, status} = UserWriteDMCADynamoDB()
     const [username, setUsername] = useState('')
     const [fileName, setfileName] = useState('')
-    const [contract_address,setcontract_address]=useState(state.contract_address)
+    const [contract_address,setcontract_address]=state.contract_address
     const [marketplace_name, setWhitelist] = useState(state.marketplace_name)
-    const [tokenID, setTokenID] = useState('')
+    const [tokenID, setTokenID] = state.token_id
     
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        createDMCA({username,fileName})
+        createDMCA({tokenID, contract_address})
     };
 
     const setSubmitButtonStatus = () => {
@@ -83,6 +83,7 @@ export default function ESignaturePage() {
                             type="submit"
                             className='submit-button'
                             isDisabled={!canSubmit}
+                            onClick={handleSubmit}
                             size="large">Submit</Button>
                     </Flex>
                     
