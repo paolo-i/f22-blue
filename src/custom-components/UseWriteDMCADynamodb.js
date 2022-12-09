@@ -13,7 +13,10 @@ function UseWriteDMCADynamoDB() {
             fileName : dmca.fileName,
             artTitle : dmca.artTitle,
             date_created : dmca.date_created,
+            image_link : dmca.image_link,
+            market_place : dmca.market_place,
             username : dmca.username,
+            tokenID  : dmca.tokenID,
             nftAddress : dmca.nftAddress,
             dmca_status : dmca.dmca_status
         });

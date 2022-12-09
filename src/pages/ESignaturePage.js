@@ -18,7 +18,7 @@ export default function ESignaturePage() {
     const [fileName, setfileName] = useState('')
     const [contract_address,setcontract_address]=useState(state.contract_address)
     const [marketplace_name, setWhitelist] = useState(state.marketplace_name)
-    const [tokenId, setTokenId] = useState('')
+    const [tokenID, setTokenID] = useState('')
     
 
     const handleSubmit = (event) => {
