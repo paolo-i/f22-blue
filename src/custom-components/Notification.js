@@ -69,13 +69,13 @@ export default function Notification({
               wrap="bottom"
             >
               <div>
-                <Text color="white" padding="0 0 1rem 0" fontWeight={700}>
+                <Text color="white" padding="0 0 1rem 0" fontSize="18pt" fontWeight={700}>
                   Your artwork:
                 </Text>
                 <Image src={original_img} width="1700px" height="auto" />
               </div>
               <div>
-                <Text color="white" padding="0 0 1rem 0" fontWeight={700}>
+                <Text color="white" padding="0 0 1rem 0" fontSize="18pt" fontWeight={700}>
                   Detected NFT:
                 </Text>
                 <Image src={img_link} width="1700px" height="auto" />
