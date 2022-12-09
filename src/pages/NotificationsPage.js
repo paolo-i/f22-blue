@@ -44,6 +44,7 @@ export default function Notifications(props) {
                       blockchain={notification.blockchain}
                       file={notification.file}
                       contract_address={notification.contract_address}
+                      username={user.username}
                       img_link={notification.image_url}
                       marketplace_name={notification.marketplace}
                       original_img={notification.file}

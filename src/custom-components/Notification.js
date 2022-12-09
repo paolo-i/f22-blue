@@ -9,6 +9,7 @@ import {
   Button,
 } from "@aws-amplify/ui-react";
 import Confirmation from "./Confirmation";
+import {Authenticator } from '@aws-amplify/ui-react';
 import { Amplify } from "aws-amplify";
 import awsconfig from "../aws-exports";
 
@@ -18,6 +19,7 @@ export default function Notification({
   token_id,
   blockchain,
   contract_address,
+  username,
   img_link,
   original_img,
   marketplace_name,
@@ -26,11 +28,15 @@ export default function Notification({
 
   const renderConfirmationComponent = () => {
     if (showConfirmed) {
+      
       return (
+        <Authenticator>
+        {({user }) => (
         <>
           <Confirmation
             token_id={token_id}
             contract_address={contract_address}
+            username={user.username}
             img_link={img_link}
             marketplace_name={marketplace_name}
           />
@@ -43,6 +49,9 @@ export default function Notification({
             Cancel
           </Button>
         </>
+       )}
+          
+        </Authenticator>
       );
     }
   };

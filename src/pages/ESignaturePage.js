@@ -19,12 +19,19 @@ export default function ESignaturePage() {
     //const [contract_address,setcontract_address]=state.contract_address
     //const [marketplace_name, setWhitelist] = useState(state.marketplace_name)
     const valueid=state.token_id
+    const valuecontract=state.contract_address
+    const valueMarket=state.marketplace_name
+    const valueUser=state.username
+    const [market_place,setMarketplace] =useState(valueMarket)
     const [tokenID, setTokenID] = useState(valueid)
+    const [username,setUsername]= useState(valueUser)
+
+    const [contract_address,setcontract_address]=useState(valuecontract)
     
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        createDMCA({tokenID})
+        createDMCA({tokenID,contract_address,market_place,username})
     };
 
     const setSubmitButtonStatus = () => {

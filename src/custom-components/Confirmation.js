@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 export default function Confirmation({
   token_id,
   contract_address,
+  username,
   img_link,
   marketplace_name
 }) {
@@ -18,6 +19,7 @@ export default function Confirmation({
         token_id: token_id,
         contract_address: contract_address,
         img_link: img_link,
+        username: username,
         marketplace_name: marketplace_name
         }});
   }
