@@ -1,11 +1,12 @@
 import NavBar from "../custom-components/NavBar";
 import Notification from "../custom-components/Notification";
-import { Authenticator, ScrollView } from "@aws-amplify/ui-react";
+import { Authenticator, Heading } from "@aws-amplify/ui-react";
 
 import awsconfig from "./../aws-exports";
 import { Amplify } from "aws-amplify";
 import { useState } from "react";
-export const API_BASE_URL =
+
+export const GET_NOTIFICATIONS_URL =
   "https://iylmn8w1ye.execute-api.us-east-1.amazonaws.com/staging";
 
 Amplify.configure(awsconfig);
@@ -13,7 +14,7 @@ Amplify.configure(awsconfig);
 export default function Notifications(props) {
   const [notifications, setNotifications] = useState([]);
 
-  fetch(`${API_BASE_URL}`)
+  fetch(`${GET_NOTIFICATIONS_URL}`)
     .then((response) =>
       //handle response
       response.json()
@@ -28,31 +29,44 @@ export default function Notifications(props) {
       console.log("Error loading notifications");
     });
 
+  
+
   return (
     <Authenticator>
       {({ user }) => (
         <>
           <NavBar />
-          <ScrollView>
+          <div class="body">
+            <div class="body">
+              <Heading 
+                level="1"
+                color="white"
+                fontWeight={550}
+                alignSelf="center">
+                Notifications
+              </Heading>
+            </div>
+          </div>
             <div class="body">
               {notifications.map((notification) => {
-                return (
-                  <div class="body">
-                    <Notification
-                      token_id={notification.id}
-                      blockchain={notification.blockchain}
-                      file={notification.file}
-                      contract_address={notification.contract_address}
-                      img_link={notification.image_url}
-                      marketplace_name={notification.marketplace}
-                      original_img={notification.file}
-                      user={notification.user}
-                    />
-                  </div>
-                );
+                if (notification.user === user.username) {
+                  return (
+                    <div class="body">
+                      <Notification
+                        token_id={notification.id}
+                        blockchain={notification.blockchain}
+                        file={notification.file}
+                        contract_address={notification.contract_address}
+                        img_link={notification.image_url}
+                        marketplace_name={notification.marketplace}
+                        original_img={notification.file}
+                        user={notification.user}
+                      />
+                    </div>
+                  );
+                }
               })}
             </div>
-          </ScrollView>
         </>
       )}
     </Authenticator>

@@ -11,6 +11,7 @@ import ESignaturePage from "./pages/ESignaturePage";
 import ArtGallery from "./pages/UserArtGalleryPage";
 import Settings from "./pages/SettingsPage";
 import Confirmation from "./pages/ConfirmationPage";
+import Catalog from "./pages/CatalogingPage";
 
 function App() {
   return (
@@ -72,6 +73,12 @@ function App() {
           path="/pages/LoginAndRegistrationPage.js"
           element={<Navigate to="/LoginAndRegistrationPage" />}
         />
+
+        <Route
+          path="/pages/CatalogingPage.js"
+          element={<Navigate to="/cataloging" />}
+        />
+        <Route path="/cataloging" element={<Catalog />} />
       </Routes>
     </BrowserRouter>
   );

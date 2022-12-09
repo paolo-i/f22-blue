@@ -15,6 +15,7 @@ export default function Confirmation(props) {
   const [firstChecked, setFirstChecked] = useState(false);
   const [secondChecked, setSecondChecked] = useState(false);
 
+
   return (
     <>
       <Authenticator>

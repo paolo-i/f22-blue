@@ -76,17 +76,33 @@ const NavBar = () => {
             >
               Art Gallery and Upload
             </MenuItem>
+            
           </Menu>
 
-          <Button
-            variation="menu"
-            size="large"
-            onClick={() => {
-              navigate("../pages/NotificationsPage.js");
-            }}
+          <Menu
+            trigger={
+              <MenuButton variation="menu" size="large">
+                <FaBell ariaLabel="Alerts" fill="white" />
+              </MenuButton>
+            }
           >
-            <FaBell ariaLabel="Notifications" fill="white" />
-          </Button>
+            <MenuItem
+              onClick={() => {
+                navigate("../pages/NotificationsPage.js");
+              }}
+            >
+              Notifications
+            </MenuItem>
+            <MenuItem
+              onClick={() => {
+                navigate("../pages/CatalogingPage.js");
+              }}
+            >
+              Cataloging
+            </MenuItem>
+          </Menu>
+
+
           <Button
             variation="menu"
             size="large"

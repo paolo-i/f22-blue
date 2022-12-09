@@ -5,12 +5,17 @@ import Amplify from "aws-amplify";
 import { ScrollView, Text, View, Button, Flex } from '@aws-amplify/ui-react'
 import "./ESignaturePage.css"
 import SignatureCanvas from 'react-signature-canvas'
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-export default function ESignaturePage() {
+export const POST_DMCA_URL = 
+  "https://ed1sco1n0i.execute-api.us-east-1.amazonaws.com/prod";
+
+export default function ESignaturePage(props) {
     let sigPad = useRef();
     const [canSubmit, setCanSubmit] = useState();
     const { state } = useLocation();
+    const navigate = useNavigate();
+    const [currentDate, setCurrentDate] = useState();
 
     const setSubmitButtonStatus = () => {
         setCanSubmit(true);
@@ -19,6 +24,51 @@ export default function ESignaturePage() {
     const clearSignature = () => {
         sigPad.current.clear();
         setCanSubmit(false);
+    }
+
+    function createWritePayload(username) {
+        const date = new Date();
+
+        setCurrentDate(`${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}`);
+
+        const payload = JSON.stringify({
+            tokenID: state.token_id,
+            image_link: state.img_link,
+            username: username,
+            market_place: state.marketplace_name,
+            contract_address: state.contract_address,
+            dmca_status: "false",
+            date_created: currentDate.toString()
+        });
+
+        writeDMCA(payload);
+    }
+
+    function writeDMCA(payload) {
+        fetch(`${POST_DMCA_URL}/dmca`, 
+            {
+                method: 'POST', 
+                body: payload,
+                headers: {
+                    'Content-type': 'application/json',
+                    'accept': 'application/json'
+                }
+            }
+        )
+        .then((response) =>
+        //handle response
+        response.json()
+        )
+        .then((data) => {
+        //handle data
+        clearSignature();
+        navigate('/cataloging');
+        console.log(data);
+        })
+        .catch((error) => {
+        //handle error
+        console.log("Failure posting DMCA information");
+        });
     }
 
   return (
@@ -66,7 +116,10 @@ export default function ESignaturePage() {
                             width="150px"
                             className='submit-button'
                             isDisabled={!canSubmit}
-                            size="large">Submit</Button>
+                            size="large"
+                            onClick={() => {
+                                createWritePayload(user.username);
+                            }}>Submit</Button>
                     </Flex>
                 </View>
             </div>

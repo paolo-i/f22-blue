@@ -31,12 +31,12 @@ export default function Confirmation({
       position="absolute"
       left="25%"
       width="50%"
-      padding="1vh"
+      padding="2rem"
       borderRadius={"25px"}
-      backgroundColor={"#29aaf0"}
-      border="solid 6px black"
+      border={"solid 3px #172538"}
+      backgroundColor={"#2c4363"}
     >
-      <Text color="black" fontSize={"2em"}>
+      <Text color="white" fontWeight={550} fontSize={"2em"}>
         IMPORTANT, PLEASE READ. By continuing further, you confirm that:
       </Text>
       <Flex>
@@ -45,7 +45,7 @@ export default function Confirmation({
           checked={firstChecked}
           onChange={(e) => setFirstChecked(e.target.checked)}
         />
-        <Text fontSize="2em" color="black">
+        <Text fontSize="2em" fontWeight={550} color="white">
           You ARE the ORIGINAL artist of thie piece of artwork
         </Text>
       </Flex>
@@ -55,7 +55,7 @@ export default function Confirmation({
           checked={secondChecked}
           onChange={(e) => setSecondChecked(e.target.checked)}
         />
-        <Text fontSize="2em" color="black">
+        <Text fontSize="2em" fontWeight={550} color="white">
           You ARE looking to request a takedown of this NFT
         </Text>
       </Flex>
@@ -63,9 +63,9 @@ export default function Confirmation({
         isDisabled={!firstChecked || !secondChecked}
         variations="primary"
         size="large"
-        color="black"
+        color={firstChecked && secondChecked ? "white" : "#737373"}
         width="15vw"
-        backgroundColor={firstChecked && secondChecked ? "yellow" : "#575a5e"}
+        backgroundColor={firstChecked && secondChecked ? "#3c9955" : "#bbbbbb"}
         borderRadius="50px"
         border="black"
         onClick={(e) => {

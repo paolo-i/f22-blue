@@ -36,9 +36,10 @@ export default function Notification({
           />
           <Button
             onClick={() => setShowConfirmed(!showConfirmed)}
-            backgroundColor="red"
+            backgroundColor="#b30000"
+            color="white"
             marginLeft={"1vw"}
-            border={"solid 3px black"}
+            variation="menu"
           >
             Cancel
           </Button>
@@ -56,7 +57,7 @@ export default function Notification({
             justifyContent="space-between"
             alignItems="center"
             alignContent="flex-start"
-            gap="3rem"
+            gap="6rem"
             wrap="bottom"
           >
             <Flex
@@ -71,13 +72,13 @@ export default function Notification({
                 <Text color="white" padding="0 0 1rem 0" fontWeight={700}>
                   Your artwork:
                 </Text>
-                <Image src={original_img} height="75%" width="75%" />
+                <Image src={original_img} width="1700px" height="auto" />
               </div>
               <div>
                 <Text color="white" padding="0 0 1rem 0" fontWeight={700}>
                   Detected NFT:
                 </Text>
-                <Image src={img_link} height="75%" width="75%" />
+                <Image src={img_link} width="1700px" height="auto" />
               </div>
             </Flex>
 
@@ -95,11 +96,12 @@ export default function Notification({
               </Heading>
               <Text color="white">Token ID: {token_id}</Text>
               <Text color="white">Blockchain: {blockchain}</Text>
-              <Text color="white">Contract address: {contract_address}</Text>
+              <Text color="white" paddingBottom="1rem">Contract address: {contract_address}</Text>
               <Button
                 onClick={() => setShowConfirmed(true)}
-                backgroundColor="yellow"
-                border={"solid 3px black"}
+                backgroundColor="#3c9955"
+                color="white"
+                variation="menu"
               >
                 Click Here To Confirm
               </Button>
