@@ -14,15 +14,16 @@ export default function ESignaturePage() {
     const { state } = useLocation();
 
     const {createDMCA, status} = UserWriteDMCADynamoDB()
-    const [username, setUsername] = useState(state.user)
-    const [fileName, setfileName] = useState(state.fileName)
+    const [username, setUsername] = useState('')
+    const [fileName, setfileName] = useState('')
     const [contract_address,setcontract_address]=useState(state.contract_address)
     const [marketplace_name, setWhitelist] = useState(state.marketplace_name)
-    const [tokenId, setTokenId] = useState(state.tokenId)
+    const [tokenId, setTokenId] = useState('')
+    
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        createDMCA({ username, fileName, contract_address, tokenId })
+        createDMCA({username,fileName})
     };
 
     const setSubmitButtonStatus = () => {
@@ -70,18 +71,21 @@ export default function ESignaturePage() {
 
                     <Text color="white">*Required</Text>
                     <Flex justifyContent="space-between">
-                        <SignatureCanvas ref={sigPad} backgroundColor='#f5f5f5' canvasProps={{ className: 'sig-canvas' }} onBegin={setSubmitButtonStatus} />
+                        <SignatureCanvas ref={sigPad} backgroundColor='#f5f5f5' 
+                        canvasProps={{ className: 'sig-canvas' }} 
+                        onBegin={setSubmitButtonStatus} />
                         <Button variation="primary"
                             className='clear-signature-button'
                             onClick={clearSignature}
                             size="large">Clear</Button>
                         <Button variation="primary"
                             width="150px"
+                            type="submit"
                             className='submit-button'
                             isDisabled={!canSubmit}
-                            onSubmit={handleSubmit}
                             size="large">Submit</Button>
                     </Flex>
+                    
                 </View>
             </div>
             </>
