@@ -14,25 +14,36 @@ export default function ESignaturePage() {
     const { state } = useLocation();
 
     const {createDMCA, status} = UserWriteDMCADynamoDB()
-    //const [username, setUsername] = useState('')
-    //const [fileName, setfileName] = useState('')
-    //const [contract_address,setcontract_address]=state.contract_address
-    //const [marketplace_name, setWhitelist] = useState(state.marketplace_name)
-    const valueid=state.token_id
-    const valuecontract=state.contract_address
-    const valueMarket=state.marketplace_name
-    const valueUser=state.username
-    const [market_place,setMarketplace] =useState(valueMarket)
-    const [tokenID, setTokenID] = useState(valueid)
-    const [username,setUsername]= useState(valueUser)
-
-    const [contract_address,setcontract_address]=useState(valuecontract)
+    const fileName = '';
+    const artTitle = '';
+    const date_created = '';
+    const image_link = state.img_link;
+    const market_place = state.marketplace_name;
+    const username = state.username;
+    const tokenID = state.token_id;
+    const contract_address = state.contract_address;
+    const dmca_status = 'false';
     
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        createDMCA({fileName, artTitle, date_created, image_link, market_place, username, tokenID, contract_address, dmca_status})
+    };
+
+    // Autumn's Code
+    /*
+    const {createDMCA, status} = UserWriteDMCADynamoDB()
+    const [username, setUsername] = useState('')
+    const [fileName, setfileName] = useState('')
+    const [contract_address,setcontract_address]=state.contract_address
+    const [marketplace_name, setWhitelist] = useState(state.marketplace_name)
+    const valueid=state.token_id
+    const [tokenID, setTokenID] = useState(valueid)
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        createDMCA({tokenID,contract_address,market_place,username})
+        createDMCA({tokenID})
     };
+    */
 
     const setSubmitButtonStatus = () => {
         setCanSubmit(true);
@@ -45,7 +56,7 @@ export default function ESignaturePage() {
 
   return (
         <Authenticator>
-            {({user }) => (
+            {({ user }) => (
             <>
             <NavBar />
             <div class="body">
