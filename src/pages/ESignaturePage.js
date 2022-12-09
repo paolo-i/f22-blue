@@ -14,16 +14,17 @@ export default function ESignaturePage() {
     const { state } = useLocation();
 
     const {createDMCA, status} = UserWriteDMCADynamoDB()
-    const [username, setUsername] = useState('')
-    const [fileName, setfileName] = useState('')
-    const [contract_address,setcontract_address]=state.contract_address
-    const [marketplace_name, setWhitelist] = useState(state.marketplace_name)
-    const [tokenID, setTokenID] = state.token_id
+    //const [username, setUsername] = useState('')
+    //const [fileName, setfileName] = useState('')
+    //const [contract_address,setcontract_address]=state.contract_address
+    //const [marketplace_name, setWhitelist] = useState(state.marketplace_name)
+    const valueid=state.token_id
+    const [tokenID, setTokenID] = useState(valueid)
     
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        createDMCA({tokenID, contract_address})
+        createDMCA({tokenID})
     };
 
     const setSubmitButtonStatus = () => {
