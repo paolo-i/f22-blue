@@ -18,7 +18,7 @@ function UseWriteArtDynamoDB() {
             .then(response => response.json())
             .then(data => {
                 if (!data || !data.length) {
-                    throw new Error('An error occured while saving your item in DB, error: ' + data)
+                    throw new Error('An error occurred while saving your item in DB, error: ' + data)
                 }
 
                 setStatus({ ...status, success: true, error: ''})
