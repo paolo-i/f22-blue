@@ -1,11 +1,8 @@
 import React from "react";
 import { Flex, Button, Image } from "@aws-amplify/ui-react";
-import {
-  FaHome,
-  FaUser,
-  FaBell,
-  FaCog,
-} from "react-icons/fa";
+import { FaHome, FaBell, FaCog, FaPhotoVideo } from "react-icons/fa";
+import { GrGallery } from "react-icons/gr";
+import { TfiGallery } from "react-icons/tfi";
 import { useNavigate } from "react-router-dom";
 import { Menu, MenuItem, MenuButton } from "@aws-amplify/ui-react";
 import "./NavBar.css";
@@ -55,29 +52,15 @@ const NavBar = () => {
             <FaHome ariaLabel="Home" fill="white" />
           </Button>
 
-          <Menu
-            trigger={
-              <MenuButton variation="menu" size="large">
-                <FaUser ariaLabel="Profile" fill="white" />
-              </MenuButton>
-            }
+          <Button
+            variation="menu"
+            size="large"
+            onClick={() => {
+              navigate("../pages/UserArtGalleryPage.js");
+            }}
           >
-            <MenuItem
-              onClick={() => {
-                navigate("../pages/ProfilePage.js");
-              }}
-            >
-              Profile
-            </MenuItem>
-            <MenuItem
-              onClick={() => {
-                navigate("../pages/UserArtGalleryPage.js");
-              }}
-            >
-              Art Gallery and Upload
-            </MenuItem>
-            
-          </Menu>
+            <TfiGallery ariaLabel="Gallery" fill="white" />
+          </Button>
 
           <Menu
             trigger={
@@ -101,7 +84,6 @@ const NavBar = () => {
               Cataloging
             </MenuItem>
           </Menu>
-
 
           <Button
             variation="menu"
