@@ -1,7 +1,7 @@
 import NavBar from "../custom-components/NavBar";
 import Amplify from "aws-amplify";
 import {Authenticator, Grid, Card, Image, Link, Heading, Text, Flex} from '@aws-amplify/ui-react';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export const GET_DMCA_URL = 
   "https://ed1sco1n0i.execute-api.us-east-1.amazonaws.com/prod";
@@ -9,20 +9,27 @@ export const GET_DMCA_URL =
 export default function Catalog(props) {
     const [DMCACatalog, setDMCACatalog] = useState([]);
 
-    fetch(`${GET_DMCA_URL}/dmca`, {method: 'GEt'})
-    .then((response) =>
-    //handle response
-    response.json()
-    )
-    .then((data) => {
-    //handle data
-    setDMCACatalog(data.body);
-    console.log(data);
-    })
-    .catch((error) => {
-    //handle error
-    console.log("Failure posting DMCA information");
-    });
+    useEffect(() => {
+      getDMCACatalog();
+      console.log('DMCA Catalog loaded');
+    }, []);
+
+    const getDMCACatalog = () => {
+      fetch(`${GET_DMCA_URL}/dmca`, {method: 'GET'})
+      .then((response) =>
+      //handle response
+      response.json()
+      )
+      .then((data) => {
+      //handle data
+      setDMCACatalog(data.body);
+      console.log(data);
+      })
+      .catch((error) => {
+      //handle error
+      console.log("Failure posting DMCA information");
+      });
+    }
 
 
     return (
@@ -35,7 +42,7 @@ export default function Catalog(props) {
               <Heading 
                 level="1"
                 color="white"
-                fontWeight={550}
+                fontWeight={700}
                 alignSelf="center">
                 Cataloging
               </Heading>
@@ -53,7 +60,7 @@ export default function Catalog(props) {
                           <Flex
                             direction="row"
                             justifyContent="space-between"
-                            alignItems="center"
+                            alignItems="start"
                             alignContent="flex-start"
                             gap="1rem"
                             wrap="bottom">

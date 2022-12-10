@@ -4,7 +4,7 @@ import { Authenticator, Heading } from "@aws-amplify/ui-react";
 
 import awsconfig from "./../aws-exports";
 import { Amplify } from "aws-amplify";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const GET_NOTIFICATIONS_URL =
   "https://iylmn8w1ye.execute-api.us-east-1.amazonaws.com/staging";
@@ -14,7 +14,13 @@ Amplify.configure(awsconfig);
 export default function Notifications(props) {
   const [notifications, setNotifications] = useState([]);
 
-  fetch(`${GET_NOTIFICATIONS_URL}`)
+  useEffect(() => {
+    getNotifications();
+    console.log('Notifications updated');
+  }, []);
+
+  const getNotifications = () => {
+    fetch(`${GET_NOTIFICATIONS_URL}`)
     .then((response) =>
       //handle response
       response.json()
@@ -28,7 +34,7 @@ export default function Notifications(props) {
       //handle error
       console.log("Error loading notifications");
     });
-
+  }
   
 
   return (
@@ -41,7 +47,7 @@ export default function Notifications(props) {
               <Heading 
                 level="1"
                 color="white"
-                fontWeight={550}
+                fontWeight={700}
                 alignSelf="center">
                 Notifications
               </Heading>

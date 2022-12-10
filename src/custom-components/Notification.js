@@ -94,9 +94,9 @@ export default function Notification({
                   transaction on {marketplace_name}
                 </Link>
               </Heading>
-              <Text color="white">Token ID: {token_id}</Text>
-              <Text color="white">Blockchain: {blockchain}</Text>
-              <Text color="white" paddingBottom="1rem">Contract address: {contract_address}</Text>
+              <Text color="white" fontSize="16pt">Token ID: {token_id}</Text>
+              <Text color="white" fontSize="16pt">Blockchain: {blockchain}</Text>
+              <Text color="white"  fontSize="16pt" paddingBottom="1rem">Contract address: {contract_address}</Text>
               <Button
                 onClick={() => setShowConfirmed(true)}
                 backgroundColor="#3c9955"
