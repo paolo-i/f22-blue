@@ -36,7 +36,7 @@ export default function Home( props){
         
         <View padding="1rem 2rem">
             <h1>Welcome back, {user.username}</h1>
-            <h2>You have <Link href="/notifications" color="#8BC7FF">{numNotifications} notifications</Link></h2>
+            <h2>You have <Link href="/notifications" color="#8BC7FF">new notifications</Link></h2>
           </View><View backgroundColor="#263A58" padding="1rem 2rem">
               <h1>Art Protection Guidelines</h1>
               <p>Protecting art begins with you.</p>
