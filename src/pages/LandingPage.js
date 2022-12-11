@@ -45,7 +45,7 @@ export default function Home( props){
                  If each individual followed these simple steps we can nip this
                  problem in the bud</p>
               <ul>
-                <li>Step 1: Keep the resolustion low!
+                <li>Step 1: Keep the resolution low!
                       We understand the want to upload the best
                       image possible, but higher resolution images
                       are more tempting to steal. We recommend an
@@ -66,7 +66,7 @@ export default function Home( props){
                       redirected to you.
                 </li>
                 <li>Final Step: Upload to Art Guardian!
-                      Art Guardian cannot prevent the theft from occuring,
+                      Art Guardian cannot prevent the theft from occurring,
                       but we can help stop its proliferation and take down
                       stolen are. That cannot be done without you uploading
                       to Art Guardian. Make sure to upload unmodified,
