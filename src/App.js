@@ -11,6 +11,7 @@ import ESignaturePage from "./pages/ESignaturePage";
 import ArtGallery from "./pages/UserArtGalleryPage";
 import Settings from "./pages/SettingsPage";
 import Confirmation from "./pages/ConfirmationPage";
+
 import Catalog from "./pages/CatalogingPage";
 
 function App() {

@@ -73,6 +73,7 @@ export default function Home( props){
                       original resolution
 
                 </li>
+                <h2>Having Trouble? Click <a href={require("../custom-components/Art_Guardian_User_Manual.pdf")} download="Art_Guardian_User_Manual.pdf">Here</a> to Find Our Manual!</h2>
               </ul>
             </View>
             </>
