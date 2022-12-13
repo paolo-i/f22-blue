@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import NavBar from "../custom-components/NavBar";
 import { Authenticator, Link } from "@aws-amplify/ui-react";
 import Amplify from "aws-amplify";
-import { ScrollView, Text, View, Button, Flex } from "@aws-amplify/ui-react";
+import { ScrollView, Text, View, Button, Flex, Heading } from "@aws-amplify/ui-react";
 import "./ESignaturePage.css";
 import SignatureCanvas from "react-signature-canvas";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -140,6 +140,13 @@ export default function ESignaturePage(props) {
         <>
           <NavBar />
           <div class="body">
+            <Heading
+              level="3"
+              color="white"
+              padding="0 0 2rem 0"
+              fontWeight={700}>
+              Read and confirm that ALL information is correct
+            </Heading>
             <ScrollView
               backgroundColor="#f5f5f5"
               height="400px"
@@ -221,7 +228,7 @@ export default function ESignaturePage(props) {
                   isDisabled={!canSubmit}
                   size="large"
                   onClick={() => {
-                    createWritePayload(user.username);
+                    createWritePayload(user.username)
                   }}
                 >
                   Submit

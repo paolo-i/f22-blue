@@ -46,7 +46,7 @@ export default function Confirmation({
           onChange={(e) => setFirstChecked(e.target.checked)}
         />
         <Text fontSize="2em" fontWeight={550} color="white">
-          You ARE the ORIGINAL artist of thie piece of artwork
+          You ARE the ORIGINAL artist of this piece of artwork
         </Text>
       </Flex>
       <Flex>
